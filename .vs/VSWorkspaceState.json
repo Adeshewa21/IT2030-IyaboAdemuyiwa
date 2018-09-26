@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MusicStoreApplication",
+    "\\MusicStoreApplication\\MusicStoreApplication"
   ],
-  "SelectedNode": "\\Lab02",
+  "SelectedNode": "\\MusicStoreApplication\\MusicStoreApplication.sln",
   "PreviewInSolutionExplorer": false
 }
