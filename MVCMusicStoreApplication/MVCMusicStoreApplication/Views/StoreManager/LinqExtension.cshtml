@@ -1,0 +1,48 @@
+﻿@model MVCMusicStoreApplication.Models.Album
+
+@{
+    ViewBag.Title = "TestView";
+}
+
+<h2>Test HTML Helpers in this view</h2>
+<div class="form-horizontal">
+    <p></p>
+    <h4>Album</h4>
+    <hr />
+    @* This is how you create a basic DropDownList without writing any HTML Code by using HTML Helpers in RAZOR
+        @Html.Label("Albums")
+        @Html.DropDownList("Albums", new List<SelectListItem>() { new SelectListItem() { Text = "Album1", Value = "1" },
+                                                                new SelectListItem() { Text = "Album2", Value = "2"}})
+    *@
+
+    @* This is how we tie DropDownList to a viewbag item
+
+            <div>
+            @Html.Label("Albums")
+            @Html.DropDownListFor(x => x.AlbumId, null)
+        </div>
+        </div>
+        <div>
+            @Html.Label("Genres")
+            @Html.DropDownList("GenreId")
+        </div>
+        <div>
+            @Html.Label("Artists")
+            @Html.DropDownList("ArtistId")
+        </div>
+
+    *@
+    <div>
+        @Html.Label("AlbumsByName")
+        @Html.DropDownList("AlbumsByName")
+    </div>
+    <div>
+        @Html.Label("AlbumsByArtist")
+        @Html.DropDownList("AlbumsByArtist")
+    </div>
+    <div>
+        @Html.Label("AlbumsByGenre")
+        @Html.DropDownList("AlbumsByGenre")
+    </div>
+
+</div>

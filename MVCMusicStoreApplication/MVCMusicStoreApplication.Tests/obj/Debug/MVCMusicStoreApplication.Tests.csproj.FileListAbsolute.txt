@@ -34,3 +34,5 @@ C:\Users\ademu\source\repos\IT2030-IyaboAdemuyiwa\MVCMusicStoreApplication\MVCMu
 C:\Users\ademu\source\repos\IT2030-IyaboAdemuyiwa\MVCMusicStoreApplication\MVCMusicStoreApplication.Tests\obj\Debug\MVCMusicStoreApplication.Tests.csproj.CopyComplete
 C:\Users\ademu\source\repos\IT2030-IyaboAdemuyiwa\MVCMusicStoreApplication\MVCMusicStoreApplication.Tests\obj\Debug\MVCMusicStoreApplication.Tests.dll
 C:\Users\ademu\source\repos\IT2030-IyaboAdemuyiwa\MVCMusicStoreApplication\MVCMusicStoreApplication.Tests\obj\Debug\MVCMusicStoreApplication.Tests.pdb
+C:\Users\ademu\source\repos\IT2030-IyaboAdemuyiwa\MVCMusicStoreApplication\MVCMusicStoreApplication.Tests\bin\Debug\EntityFramework.dll
+C:\Users\ademu\source\repos\IT2030-IyaboAdemuyiwa\MVCMusicStoreApplication\MVCMusicStoreApplication.Tests\bin\Debug\EntityFramework.xml

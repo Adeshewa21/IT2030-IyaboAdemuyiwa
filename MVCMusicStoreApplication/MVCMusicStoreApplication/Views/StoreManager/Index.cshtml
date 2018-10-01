@@ -26,6 +26,14 @@
         <th>
             @Html.DisplayNameFor(model => model.AlbumArtUrl)
         </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.InStock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CountryOfOrigin)        @* Its called strongly HTML Helpers*@
+        </th>
+
         <th></th>
     </tr>
 
@@ -47,9 +55,17 @@
             @Html.DisplayFor(modelItem => item.AlbumArtUrl)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AlbumId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AlbumId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AlbumId })
+            @Html.CheckBoxFor(modelItem => item.InStock)
+        </td>
+        <td>
+            @Html.RadioButtonFor(modelItem => item.CountryOfOrigin, "US")
+            @Html.RadioButtonFor(modelItem => item.CountryOfOrigin, "UK")
+            @Html.RadioButtonFor(modelItem => item.CountryOfOrigin, "Other")
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.AlbumId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.AlbumId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.AlbumId })
         </td>
     </tr>
 }

@@ -49,7 +49,7 @@ namespace MVCMusicStoreApplication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AlbumId,GenreId,ArtistId,Title,Price,AlbumArtUrl")] Album album)
+        public ActionResult Create([Bind(Include = "AlbumId,GenreId,ArtistId,Title,Price,AlbumArtUrl,InStock,CountryOfOrigin")] Album album)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace MVCMusicStoreApplication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AlbumId,GenreId,ArtistId,Title,Price,AlbumArtUrl")] Album album)
+        public ActionResult Edit([Bind(Include = "AlbumId,GenreId,ArtistId,Title,Price,AlbumArtUrl,InStock,CountryOfOrigin")] Album album)
         {
             if (ModelState.IsValid)
             {
@@ -131,6 +131,86 @@ namespace MVCMusicStoreApplication.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult Linq()
+        {
+            //1. Returns all albums
+
+            var albums = db.Albums;
+            if (albums == null)
+            {
+                return HttpNotFound();
+            }
+
+            // 2. Returns albums by a specific artist
+            var albumsbyartist = (from a in albums
+                                  where a.Artist.Name == "Chic"
+                                  select a);
+
+            // 3. Returns albums in a specific genre
+            var albumsbygenre = (from a in albums
+                                 where a.Genre.Name == "Classical"
+                                 orderby a.Title descending
+                                 select a);
+
+            //4. Returns album by name
+            var albumsbyname = (from a in albums
+                                where a.Title == "Stormbringer"
+                                select a);
+
+            // 5. Returns specific album by Id - use find() to identify a record by primary key
+            //var albumById = db.lbums.Find(4);
+
+            ViewBag.AlbumsByName = new SelectList(albumsbyname, "AlbumId", "Title", albums.First().AlbumId);
+            ViewBag.AlbumsByGenre = new SelectList(albumsbygenre, "AlbumId", "Title", albums.First().AlbumId);
+            ViewBag.AlbumsByArtist = new SelectList(albumsbyartist, "AlbumId", "Title", albums.First().AlbumId);
+            return View();
+        }
+
+        public ActionResult LinqExtension()
+        {
+            var AlbumsByName = db.Albums.Where(x => x.Title == "Stormbringer");
+            var AlbumsByGenre = db.Albums.Where(x => x.Genre.Name == "Classical").OrderByDescending(x => x.Title);
+            var AlbumsByArtist= db.Albums.Where( x => x.Artist.Name == "Chic");
+
+            ViewBag.AlbumsByName = new SelectList(AlbumsByName, "AlbumId", "Title", AlbumsByName.First().AlbumId);
+            ViewBag.AlbumsByGenre = new SelectList(AlbumsByGenre, "AlbumId", "Title", AlbumsByGenre.First().AlbumId);
+            ViewBag.AlbumsByArtist = new SelectList(AlbumsByArtist, "AlbumId", "Title", AlbumsByArtist.First().AlbumId);
+            ViewBag.ArtistId = new SelectList(db.Artists, "ArtistId", "Name", db.Artists.First().ArtistId);
+            ViewBag.GenreId = new SelectList(db.Genres, "GenreId", "Name", db.Genres.First().GenreId);
+
+            return View();
+        }
+        
+        public ActionResult Test()
+        {
+            var albums = db.Albums;
+            // This format is LINQ Extensions
+            var albumsbyname = albums.Where(x => x.Title == "Stormbringer");
+            var albumsbyartist = albums.Where(x => x.Artist.Name == "Chic");
+            var albumsbygenre = albums.Where(x => x.Genre.Name == "Classical").OrderByDescending(x => x.Title);
+            
+            
+            // This format is LINQ It can also be written in this format below 
+            /*
+            var albumsbyname = (from a in albums
+                                where a.Title == "Stormbringer"
+                                select a);
+
+            var albumsbyartist = (from a in albums
+                                 where a.Artist.Name == "Chic"
+                                 select a);
+            var albumsbygenre = (from a in albums
+                                 where a.Genre.Name == "Classical"
+                                 orderby a.Title descending
+                                 select a);
+            */
+            
+            ViewBag.AlbumsByName = new SelectList(albumsbyname, "AlbumId", "Title", albumsbyname.First().AlbumId);
+            ViewBag.AlbumsByArtist = new SelectList(albumsbyartist, "AlbumId", "Title", albumsbyartist.First().AlbumId);
+            ViewBag.AlbumsByGenre = new SelectList(albumsbygenre, "AlbumId", "Title", albumsbygenre.First().AlbumId);
+            return View();
         }
     }
 }

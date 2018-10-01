@@ -53,7 +53,16 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    <dt>
+        @Html.CheckBoxFor(model => model.InStock)
+    </dt>
+    <dt>
+        @Html.RadioButtonFor(model => model.CountryOfOrigin, "US")
+        @Html.RadioButtonFor(model => model.CountryOfOrigin, "UK")
+        @Html.RadioButtonFor(model => model.CountryOfOrigin, "Other")
+    </dt>
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">

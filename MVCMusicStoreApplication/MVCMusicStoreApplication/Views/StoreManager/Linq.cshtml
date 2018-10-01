@@ -1,0 +1,13 @@
+﻿@model IEnumerable<MVCMusicStoreApplication.Models.Album>
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>Linq View</h2>
+<p></p>
+<div>
+    @Html.DropDownList("AlbumsByName")
+    @Html.DropDownList("AlbumsByGenre")
+    @Html.DropDownList("AlbumsByArtist")
+
+</div>
