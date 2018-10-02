@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\MVCMusicStoreApplication"
+    "\\EnrollmentApplication",
+    "\\MVCMusicStoreApplication\\MVCMusicStoreApplication"
   ],
-  "SelectedNode": "\\MVCMusicStoreApplication\\MVCMusicStoreApplication.sln",
+  "SelectedNode": "\\EnrollmentApplication\\EnrollmentApplication.sln",
   "PreviewInSolutionExplorer": false
 }

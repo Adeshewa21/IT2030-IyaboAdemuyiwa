@@ -1,0 +1,16 @@
+﻿@model IEnumerable<EnrollmentApplication.Models.Enrollment>
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>Linq View</h2>
+
+<p></p>
+<div>
+    @Html.DropDownList("EnrollmentsByName")
+    @Html.DropDownList("EnrollmentsByCourse")
+    @Html.DropDownList("EnrollmentsByStudent")
+
+</div>
+
+

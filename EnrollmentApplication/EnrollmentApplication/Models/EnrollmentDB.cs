@@ -25,4 +25,11 @@ namespace EnrollmentApplication.Models
 
         public System.Data.Entity.DbSet<EnrollmentApplication.Models.Student> Students { get; set; }
     }
+
+    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+        Database.SetInitializer<DbContext>(null);
+        Base64FormattingOptions.OnModelCreating(modelBuilder);
+    }
+
 }

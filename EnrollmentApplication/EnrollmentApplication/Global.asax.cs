@@ -8,7 +8,7 @@ using System.Web.Routing;
 
 namespace EnrollmentApplication
 {
-    public class MvcApplication : System.Web.HttpApplication
+    public class EnrollmentApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
         {
