@@ -156,6 +156,7 @@
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Enrollment.cs" />
     <Compile Include="Models\EnrollmentDB.cs" />
+    <Compile Include="Models\EnrollmentInitializerDB.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -201,9 +202,6 @@
     <Content Include="Views\Enrollment\Details.cshtml" />
     <Content Include="Views\Enrollment\Edit.cshtml" />
     <Content Include="Views\Enrollment\Index.cshtml" />
-    <Content Include="Views\Enrollment\Test.cshtml" />
-    <Content Include="Views\Enrollment\Linq.cshtml" />
-    <Content Include="Views\Enrollment\LinkExtension.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

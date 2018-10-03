@@ -1,60 +1,105 @@
 ﻿@model IEnumerable<EnrollmentApplication.Models.Enrollment>
-
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
-
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Course.Coursetitle)
         </th>
+
         <th>
             @Html.DisplayNameFor(model => model.Student.LastName)
         </th>
+
         <th>
             @Html.DisplayNameFor(model => model.Grade)
         </th>
+
         <th>
             @Html.DisplayNameFor(model => model.StudentObject)
         </th>
+
         <th>
             @Html.DisplayNameFor(model => model.CourseObject)
         </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.AssignedCampus)
+        </th>
+
+        <th>
+            @Html.DiplayNameFor(model => model.EnrollmentSemester)      @*// You can recheck this section in case error occurs *@
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.EnrollmentYear)
+        </th>
+
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Course.Coursetitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Student.LastName)
-        </td>
-        <!-- <th>
-         @Html.DisplayNameFor(model => model.Student.FirstName)
-     </th> -->
-        <td>
-            @Html.DisplayFor(modelItem => item.Grade)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StudentObject)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CourseObject)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.EnrollmentId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.EnrollmentId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.EnrollmentId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course.Coursetitle)
+            </td>
 
-</table>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.LastName)
+            </td>
+            <!-- <th>
+                @Html.DisplayNameFor(model => model.Student.FirstName)
+            </th> -->
+            <td>
+                @Html.DisplayFor(modelItem => item.Grade)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentObject)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseObject)
+            </td>
+
+            @*
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.AssignedCampus)
+            </td>
+
+            <td>
+                @Html.RadioButtonFor(model => item.EnrollmentSemester, "Spring")
+                @Html.RadioButtonFor(model => item.EnrollmentSemester, "Summer")
+                @Html.RadioButtonFor(model => item.EnrollmentSemester, "Fall")
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.EnrollmentYear)
+            </td>
+
+            *@
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.EnrollmentId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.EnrollmentId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.EnrollmentId })
+            </td>
+        </tr>
+    }
+</table> 

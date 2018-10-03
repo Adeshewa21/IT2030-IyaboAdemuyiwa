@@ -1,5 +1,4 @@
 ﻿@model EnrollmentApplication.Models.Enrollment
-
 @{
     ViewBag.Title = "Details";
 }
@@ -9,11 +8,12 @@
 <div>
     <h4>Enrollment</h4>
     <hr />
+
     <dl class="dl-horizontal">
+
         <dt>
             @Html.DisplayNameFor(model => model.Course.Coursetitle)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Course.Coursetitle)
         </dd>
@@ -21,7 +21,6 @@
         <dt>
             @Html.DisplayNameFor(model => model.Student.LastName)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Student.LastName)
         </dd>
@@ -29,7 +28,6 @@
         <dt>
             @Html.DisplayNameFor(model => model.Student.FirstName)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Student.FirstName)
         </dd>
@@ -37,7 +35,6 @@
         <dt>
             @Html.DisplayNameFor(model => model.Grade)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Grade)
         </dd>
@@ -45,7 +42,6 @@
         <dt>
             @Html.DisplayNameFor(model => model.StudentObject)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.StudentObject)
         </dd>
@@ -58,36 +54,36 @@
             @Html.DisplayFor(model => model.CourseObject)
         </dd>
 
+        @* IsActive CheckBox *@
         <dt>
             @Html.DisplayNameFor(model => model.IsActive)
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.IsActive)
+            @Html.CheckBoxFor(model => model.IsActive)
         </dd>
 
+        @* AssignedCampus TextBox*@
         <dt>
             @Html.DisplayNameFor(model => model.AssignedCampus)
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.AssignedCampus)
+            @Html.TextBoxFor(model => model.AssignedCampus)
         </dd>
 
+        @* EnrollmentSemester RadioButton*@
         <dt>
             @Html.DisplayNameFor(model => model.EnrollmentSemester)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.EnrollmentSemester)
         </dd>
 
+        @* EnrollmentYear TextBox*@
         <dt>
             @Html.DisplayNameFor(model => model.EnrollmentYear)
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.EnrollmentYear)
+            @Html.TextBoxFor(model => model.EnrollmentYear)
         </dd>
 
     </dl>

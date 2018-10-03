@@ -7,13 +7,17 @@ namespace EnrollmentApplication.Models
 {
     public class Enrollment
     {
+       // public Enrollment(int EnrollmentId, int StudentId, int CourseId, decimal Grade, string StudentObject, string CourseObject, Student Student, Course Course, bool IsActive, string AssignedCampus, string EnrollmentSemester, string EnrollmentYear)
+       // {
+
+        //}
         public virtual int EnrollmentId { get; set; }
 
         public virtual int StudentId { get; set; }
 
         public virtual int CourseId { get; set; }
 
-        //public virtual string Grade { get; set; }
+        //public virtual string Grade { get; set; } 
 
         public virtual decimal Grade { get; set; }
 
@@ -24,8 +28,6 @@ namespace EnrollmentApplication.Models
         public virtual Student Student { get; set; }
 
         public virtual Course Course { get; set; }
-
-        // Added from the line below
 
         public virtual bool IsActive { get; set; }
 

@@ -2,7 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\EnrollmentApplication",
-    "\\MVCMusicStoreApplication\\MVCMusicStoreApplication"
+    "\\EnrollmentApplication\\EnrollmentApplication",
+    "\\EnrollmentApplication\\EnrollmentApplication\\Controllers",
+    "\\EnrollmentApplication\\EnrollmentApplication\\Models",
+    "\\EnrollmentApplication\\EnrollmentApplication\\Views\\Enrollment",
+    "\\MVCMusicStoreApplication",
+    "\\MVCMusicStoreApplication\\MVCMusicStoreApplication",
+    "\\MVCMusicStoreApplication\\MVCMusicStoreApplication\\Controllers",
+    "\\MVCMusicStoreApplication\\MVCMusicStoreApplication\\Models"
   ],
   "SelectedNode": "\\EnrollmentApplication\\EnrollmentApplication.sln",
   "PreviewInSolutionExplorer": false

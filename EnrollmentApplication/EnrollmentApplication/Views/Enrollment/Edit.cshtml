@@ -1,22 +1,18 @@
 ﻿@model EnrollmentApplication.Models.Enrollment
-
 @{
     ViewBag.Title = "Edit";
 }
 
 <h2>Edit</h2>
-
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
 <div class="form-horizontal">
     <h4>Enrollment</h4>
     <hr />
+
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.EnrollmentId)
-
     <div class="form-group">
         @Html.LabelFor(model => model.StudentId, "StudentId", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -51,72 +47,75 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.CourseObject, htmlAttributes: new { @class = "control-label col-md-2" })
+
         <div class="col-md-10">
             @Html.EditorFor(model => model.CourseObject, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.CourseObject, "", new { @class = "text-danger" })
         </div>
     </div>
 
+    @* IsActive CheckBox*@
     <div class="form-group">
         @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.IsActive, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-    <div class="form-group">
-        @Html.TextBoxFor(model => model.AssignedCampus, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.AssignedCampus, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.IsActive, new { htmlAttributes = new { @class = "form-control"} })
+            @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    @* AssignedCampus TextBox*@
+    <div class="form-group">
+        @Html.LabelFor(model => model.AssignedCampus, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.AssignedCampus, htmlAttributes: new { @class = "control-label col-md-2" })
             @Html.ValidationMessageFor(model => model.AssignedCampus, "", new { @class = "text-danger" })
         </div>
     </div>
 
+    @* EnrollmentSmester RadioButton*@
     <div class="form-group">
-         @Html.LabelFor(model => model.EnrollmentSemester, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.EnrollmentSemester, htmlAttributes: new { @class = "control-label col-md-2" })
 
-         <div class="col-md-10">
-         <div>
-             @Html.Label("Spring")
-             @Html.RadioButtonFor(model => model.EnrollmentSemester, "Spring", htmlAttributes: new { @class = "control-label col-md-2" })
-             </div>
-    <div>
-        @Html.Label("Summer")
-        @Html.RadioButtonFor(model => model.EnrollmentSemester, "Summer", htmlAttributes: new { @class = "control-label col-md-2" })
-    </div>
-    <div>
-        @Html.Label("Fall")
-        @Html.RadioButtonFor(model => model.EnrollmentSemester, "Fall", htmlAttributes: new { @class = "control-label col-md-2" })
-        </div>
-            @Html.ValidationMessageFor(model => model.EnrollmentSemester, "", new { @class = "text-danger" })
-        </div>
-    </div>
-        <div class="form-group">
-            @Html.TextBoxFor(model => model.EnrollmentYear, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.EnrollmentYear, new { htmlAttributes = new { @class = "form-control" } })
+            <div>
+                @Html.Label("US")
+                @Html.RadioButtonFor(model => model.EnrollmentSemester, "Spring", htmlAttributes: new { @class = "control-label col-md-2" })
+            </div>
+            <div>
+                @Html.Label("UK")
+                @Html.RadioButtonFor(model => model.EnrollmentSemester, "Summer", htmlAttributes: new { @class = "control-label col-md-2" })
+            </div>
+            <div>
+                @Html.Label("Other")
+                @Html.RadioButtonFor(model => model.EnrollmentSemester, "Fall", htmlAttributes: new { @class = "control-label col-md-2" })
+            </div>
+            @Html.ValidationMessageFor(model => model.EnrollmentSemester, "", new {  @class = "text-danger" })
+        </div>
+    </div>
+
+    @* EnrollmentYear TextBox*@
+    <div class="form-group">
+        @Html.LabelFor(model => model.EnrollmentYear, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.EnrollmentYear, htmlAttributes: new { @class = "control-label col-md-2" })
             @Html.ValidationMessageFor(model => model.EnrollmentYear, "", new { @class = "text-danger" })
         </div>
     </div>
 
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
         </div>
     </div>
+</div>
+}
 
-        }
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
 
-        <div>
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-
-        @section Scripts {
-            @Scripts.Render("~/bundles/jqueryval")
-        }
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+} 
