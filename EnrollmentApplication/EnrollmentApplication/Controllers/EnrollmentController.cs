@@ -17,7 +17,7 @@ namespace EnrollmentApplication.Controllers
         // GET: Enrollment 
         public ActionResult Index()
         {
-            var enrollments = db.Enrollments.Include(a => a.Course).Include(a => a.Student);
+            var enrollments = db.Enrollments.Include(e => e.Course).Include(e => e.Student);
             return View(enrollments.ToList());
         }
 
@@ -41,9 +41,7 @@ namespace EnrollmentApplication.Controllers
         public ActionResult Create()
         {
             ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "Coursetitle", "CourseCredits");
-
             ViewBag.StudentId = new SelectList(db.Students, "StudentId", "LastName", "FirstName");
-
             return View();
         }
 
@@ -62,9 +60,7 @@ namespace EnrollmentApplication.Controllers
             }
 
             ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "Coursetitle", "CourseCredits", enrollment.CourseId);
-
             ViewBag.StudentId = new SelectList(db.Students, "StudentId", "LastName", "FirstName", enrollment.StudentId);
-
             return View(enrollment);
         }
 
@@ -82,9 +78,7 @@ namespace EnrollmentApplication.Controllers
             }
 
             ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "Coursetitle", "CourseCredits", enrollment.CourseId);
-
             ViewBag.StudentId = new SelectList(db.Students, "StudentId", "LastName", "FirstName", enrollment.StudentId);
-
             return View(enrollment);
         }
 
@@ -105,9 +99,7 @@ namespace EnrollmentApplication.Controllers
             }
 
             ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "Coursetitle", "CourseCredits", enrollment.CourseId);
-
             ViewBag.StudentId = new SelectList(db.Students, "StudentId", "LastName", "FirstName", enrollment.StudentId);
-
             return View(enrollment);
         }
 
