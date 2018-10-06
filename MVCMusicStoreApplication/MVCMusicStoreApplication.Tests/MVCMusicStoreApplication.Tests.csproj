@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D5997746-094F-43DA-90DF-C0D427BFF7C9}</ProjectGuid>
+    <ProjectGuid>{48F8E608-A945-47B7-A7FA-1966E6EDC845}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MVCMusicStoreApplication.Tests</RootNamespace>
@@ -100,7 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MVCMusicStoreApplication\MVCMusicStoreApplication.csproj">
-      <Project>{842FBA24-9622-404A-9CC0-24F733295510}</Project>
+      <Project>{1936A063-DC26-4409-9467-FCC8BEF13509}</Project>
       <Name>MVCMusicStoreApplication</Name>
     </ProjectReference>
   </ItemGroup>

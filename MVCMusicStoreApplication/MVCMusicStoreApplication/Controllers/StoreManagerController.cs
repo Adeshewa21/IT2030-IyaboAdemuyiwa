@@ -172,7 +172,7 @@ namespace MVCMusicStoreApplication.Controllers
         {
             var AlbumsByName = db.Albums.Where(x => x.Title == "Stormbringer");
             var AlbumsByGenre = db.Albums.Where(x => x.Genre.Name == "Classical").OrderByDescending(x => x.Title);
-            var AlbumsByArtist= db.Albums.Where( x => x.Artist.Name == "Chic");
+            var AlbumsByArtist = db.Albums.Where(x => x.Artist.Name == "Chic");
 
             ViewBag.AlbumsByName = new SelectList(AlbumsByName, "AlbumId", "Title", AlbumsByName.First().AlbumId);
             ViewBag.AlbumsByGenre = new SelectList(AlbumsByGenre, "AlbumId", "Title", AlbumsByGenre.First().AlbumId);
@@ -182,7 +182,7 @@ namespace MVCMusicStoreApplication.Controllers
 
             return View();
         }
-        
+
         public ActionResult Test()
         {
             var albums = db.Albums;
@@ -190,8 +190,8 @@ namespace MVCMusicStoreApplication.Controllers
             var albumsbyname = albums.Where(x => x.Title == "Stormbringer");
             var albumsbyartist = albums.Where(x => x.Artist.Name == "Chic");
             var albumsbygenre = albums.Where(x => x.Genre.Name == "Classical").OrderByDescending(x => x.Title);
-            
-            
+
+
             // This format is LINQ It can also be written in this format below 
             /*
             var albumsbyname = (from a in albums
@@ -206,7 +206,7 @@ namespace MVCMusicStoreApplication.Controllers
                                  orderby a.Title descending
                                  select a);
             */
-            
+
             ViewBag.AlbumsByName = new SelectList(albumsbyname, "AlbumId", "Title", albumsbyname.First().AlbumId);
             ViewBag.AlbumsByArtist = new SelectList(albumsbyartist, "AlbumId", "Title", albumsbyartist.First().AlbumId);
             ViewBag.AlbumsByGenre = new SelectList(albumsbygenre, "AlbumId", "Title", albumsbygenre.First().AlbumId);

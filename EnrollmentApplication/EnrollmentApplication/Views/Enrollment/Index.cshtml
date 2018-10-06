@@ -4,86 +4,76 @@
 }
 
 <h2>Index</h2>
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Course.Coursetitle)
-        </th>
-
-        <th>
             @Html.DisplayNameFor(model => model.Student.LastName)
         </th>
-
+        <th>
+            @Html.DisplayNameFor(model => model.Course.Coursetitle)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Grade)
         </th>
 
+        @*
         <th>
-            @Html.DisplayNameFor(model => model.StudentObject)
+            @Html.DisplayNameFor(model => model.IsActive)
         </th>
-
         <th>
-            @Html.DisplayNameFor(model => model.CourseObject)
+            @Html.DisplayNameFor(model => model.AssignedCampus)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnrollmentSemester)        @* Its called strongly HTML Helpers
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnrollmentYear)
+        </th>
+        *@
 
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Course.Coursetitle)
-            </td>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Course.Coursetitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Grade)
+        </td>
 
-            <td>
-                @Html.DisplayFor(modelItem => item.Student.LastName)
-            </td>
-            <!-- <th>
-                @Html.DisplayNameFor(model => model.Student.FirstName)
-            </th> -->
-            <td>
-                @Html.DisplayFor(modelItem => item.Grade)
-            </td>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.StudentObject)
-            </td>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseObject)
-            </td>
-
-            @*
-            <td>
-                @Html.DisplayFor(modelItem => item.IsActive)
-            </td>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.AssignedCampus)
-            </td>
-
-            <td>
-                @Html.RadioButtonFor(model => item.EnrollmentSemester, "Spring")
-                @Html.RadioButtonFor(model => item.EnrollmentSemester, "Summer")
-                @Html.RadioButtonFor(model => item.EnrollmentSemester, "Fall")
-            </td>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.EnrollmentYear)
-            </td>
+        @*
+        <td>
+            @Html.CheckBoxFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @Html.TextBoxFor(modelItem => item.AssignedCampus)
+        </td>
+        <td>
+            @Html.RadioButtonFor(modelItem => item.EnrollmentSemester, "Spring")
+            @Html.RadioButtonFor(modelItem => item.EnrollmentSemester, "Summer")
+            @Html.RadioButtonFor(modelItem => item.EnrollmentSemester, "Fall")
+        </td>
+        <td>
+            @Html.TextBoxFor(modelItem => item.EnrollmentYear)
+        </td>
 
             *@
-
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.EnrollmentId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.EnrollmentId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.EnrollmentId })
-            </td>
-        </tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.EnrollmentId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.EnrollmentId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.EnrollmentId })
+        </td>
+    </tr>
     }
-</table> 
+
+</table>

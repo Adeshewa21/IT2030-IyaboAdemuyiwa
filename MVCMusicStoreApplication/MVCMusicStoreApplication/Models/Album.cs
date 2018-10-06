@@ -14,7 +14,7 @@ namespace MVCMusicStoreApplication.Models
         public virtual decimal Price { get; set; }
         public virtual Genre Genre { get; set; }
         public virtual Artist Artist { get; set; }
-        public virtual string AlbumArtUrl {get;set;}
+        public virtual string AlbumArtUrl { get; set; }
         public virtual string AdditionalInfo { get; set; }
         public virtual string CountryOfOrigin { get; set; }         // This will be a RadioButton
         public virtual bool InStock { get; set; }                   // This will be a CheckBox

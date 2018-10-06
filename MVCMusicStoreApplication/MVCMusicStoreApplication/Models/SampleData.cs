@@ -6,7 +6,7 @@ using System.Data.Entity;
 
 namespace MVCMusicStoreApplication.Models
 {
-	public class SampleData : DropCreateDatabaseIfModelChanges<MVCMusicStoreApplicationDB>
+    public class SampleData : DropCreateDatabaseIfModelChanges<MVCMusicStoreApplicationDB>
     {
         protected override void Seed(MVCMusicStoreApplicationDB context)
         {
@@ -429,3 +429,5 @@ namespace MVCMusicStoreApplication.Models
         }
     }
 }
+
+// Someting type in order to be able to push my project

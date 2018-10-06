@@ -14,21 +14,20 @@ namespace EnrollmentApplication.Controllers
     {
         private EnrollmentDB db = new EnrollmentDB();
 
-        // GET: Enrollment 
+        // GET: StoreManager
         public ActionResult Index()
         {
-            var enrollments = db.Enrollments.Include(e => e.Course).Include(e => e.Student);
+            var enrollments = db.Enrollments.Include(e => e.Student).Include(e => e.Course);
             return View(enrollments.ToList());
         }
 
-        // GET: Enrollment/Details/9 
+        // GET: StoreManager/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
             Enrollment enrollment = db.Enrollments.Find(id);
             if (enrollment == null)
             {
@@ -37,20 +36,20 @@ namespace EnrollmentApplication.Controllers
             return View(enrollment);
         }
 
-        // GET: Enrollment/Create 
+        // GET: StoreManager/Create
         public ActionResult Create()
         {
-            ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "Coursetitle", "CourseCredits");
-            ViewBag.StudentId = new SelectList(db.Students, "StudentId", "LastName", "FirstName");
+            ViewBag.StudentId = new SelectList(db.Students, "StudentId", "LastName");
+            ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "Coursetitle");
             return View();
         }
 
-        // POST: Enrollment/Create 
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for  
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598. 
+        // POST: StoreManager/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EnrollmentId,StudentId,CourseId,Grade,StudentObject,CourseObject,IsActive,AssignedCampus,EnrollmentSemester,EnrollmentYear")] Enrollment enrollment)
+        public ActionResult Create([Bind(Include = "EnrollmentId,CourseId,StudentId,Grade,IsActive,AssignedCampus,EnrollmentSemester,EnrollmentYear")] Enrollment enrollment)
         {
             if (ModelState.IsValid)
             {
@@ -59,12 +58,12 @@ namespace EnrollmentApplication.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "Coursetitle", "CourseCredits", enrollment.CourseId);
-            ViewBag.StudentId = new SelectList(db.Students, "StudentId", "LastName", "FirstName", enrollment.StudentId);
+            ViewBag.StudentId = new SelectList(db.Students, "StudentId", "LastName", enrollment.StudentId);
+            ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "Coursetitle", enrollment.CourseId);
             return View(enrollment);
         }
 
-        // GET: Enrollment/Edit/5 
+        // GET: StoreManager/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -76,41 +75,36 @@ namespace EnrollmentApplication.Controllers
             {
                 return HttpNotFound();
             }
-
-            ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "Coursetitle", "CourseCredits", enrollment.CourseId);
-            ViewBag.StudentId = new SelectList(db.Students, "StudentId", "LastName", "FirstName", enrollment.StudentId);
+            ViewBag.StudentId = new SelectList(db.Students, "StudentId", "LastName", enrollment.StudentId);
+            ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "Coursetitle", enrollment.CourseId);
             return View(enrollment);
         }
 
-        // POST: Enrollment/Edit/5 
-
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for  
-
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598. 
+        // POST: StoreManager/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EnrollmentId,StudentId,CourseId,Grade,StudentObject,CourseObject,IsActive,AssignedCampus,EnrollmentSemester,EnrollmentYear")] Enrollment enrollment)
+        public ActionResult Edit([Bind(Include = "EnrollmentId,CourseId,StudentId,Grade,IsActive,AssignedCampus,EnrollmentSemester,EnrollmentYear")] Enrollment enrollment)
         {
             if (ModelState.IsValid)
-            { 
+            {
                 db.Entry(enrollment).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "Coursetitle", "CourseCredits", enrollment.CourseId);
-            ViewBag.StudentId = new SelectList(db.Students, "StudentId", "LastName", "FirstName", enrollment.StudentId);
+            ViewBag.StudentId = new SelectList(db.Students, "StudentId", "LastName", enrollment.StudentId);
+            ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "Coursetitle", enrollment.CourseId);
             return View(enrollment);
         }
 
-        // GET: Enrollment/Delete/5 
+        // GET: StoreManager/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
             Enrollment enrollment = db.Enrollments.Find(id);
             if (enrollment == null)
             {
@@ -119,7 +113,7 @@ namespace EnrollmentApplication.Controllers
             return View(enrollment);
         }
 
-        // POST: Enrollment/Delete/5 
+        // POST: StoreManager/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -138,5 +132,7 @@ namespace EnrollmentApplication.Controllers
             }
             base.Dispose(disposing);
         }
+
     }
+
 }

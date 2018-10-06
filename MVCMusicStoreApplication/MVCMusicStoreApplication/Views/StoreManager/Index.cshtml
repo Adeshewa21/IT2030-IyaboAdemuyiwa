@@ -37,37 +37,38 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Artist.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Genre.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AlbumArtUrl)
-        </td>
-        <td>
-            @Html.CheckBoxFor(modelItem => item.InStock)
-        </td>
-        <td>
-            @Html.RadioButtonFor(modelItem => item.CountryOfOrigin, "US")
-            @Html.RadioButtonFor(modelItem => item.CountryOfOrigin, "UK")
-            @Html.RadioButtonFor(modelItem => item.CountryOfOrigin, "Other")
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.AlbumId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.AlbumId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.AlbumId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Artist.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlbumArtUrl)
+            </td>
+            <td>
+                @Html.CheckBoxFor(modelItem => item.InStock)
+            </td>
+            <td>
+                @Html.RadioButtonFor(modelItem => item.CountryOfOrigin, "US")
+                @Html.RadioButtonFor(modelItem => item.CountryOfOrigin, "UK")
+                @Html.RadioButtonFor(modelItem => item.CountryOfOrigin, "Other")
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.AlbumId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.AlbumId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.AlbumId })
+            </td>
+        </tr>
+    }
 
 </table>

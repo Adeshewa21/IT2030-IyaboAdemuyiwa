@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{84F69CE7-FD4A-4EF7-AF2C-36070C9ECDC4}</ProjectGuid>
+    <ProjectGuid>{ABFDAF22-FF30-4F3E-8FFE-B512290E95C7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EnrollmentApplication.Tests</RootNamespace>
@@ -100,7 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EnrollmentApplication\EnrollmentApplication.csproj">
-      <Project>{424E03CB-7516-42DD-B6EE-B74AA927D51D}</Project>
+      <Project>{BA07BDD3-C50B-44D2-A6D0-D94B9B671DB0}</Project>
       <Name>EnrollmentApplication</Name>
     </ProjectReference>
   </ItemGroup>
