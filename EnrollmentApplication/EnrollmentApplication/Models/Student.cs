@@ -35,24 +35,22 @@ namespace EnrollmentApplication.Models
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-            int maxZipcode = 5;
-            int maxState = 2;
-
+            
             //Address1
             //validation 1 Check if address 2 is the same as address 1 if so show an error "Address 2 cannot be the same as Address 1" on Address 2 Field
-            if ((Address1 != Address2))
+            if ((Address1 == Address2))
             {
                 //error
                 yield return (new ValidationResult("Address 2 cannot be the same as Address 1", new[] { "Address1" }));
-            }          
+            }
 
-            if (int.Parse(Zipcode) > maxZipcode)
+            if (Zipcode.Length != 5)
             {
                 //error 
                 yield return (new ValidationResult("Enter a 5 digit Zipcode", new[] { "Zipcode" }));
             }
             
-            if (State.Split(' ').Length > maxState)
+            if (State.Length != 2)
             {
                 //error 
                 yield return (new ValidationResult("Enter a 2 digit State", new[] { "State" }));
