@@ -93,3 +93,12 @@ C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\Enrollme
 C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\EnrollmentApplication\bin\EntityFramework.SqlServer.dll
 C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\EnrollmentApplication\bin\EntityFramework.xml
 C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\EnrollmentApplication\bin\EntityFramework.SqlServer.xml
+C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\EnrollmentApplication\obj\Debug\EnrollmentApplication.Migrations.InitialCreate.resources
+C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\EnrollmentApplication\obj\Debug\EnrollmentApplication.csproj.GenerateResource.cache
+C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\EnrollmentApplication\obj\Debug\EnrollmentApplication.Migrations._20181010_Update1.resources
+C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\EnrollmentApplication\obj\Debug\EnrollmentApplication.Migrations._1010_StudentUpdate1.resources
+C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\EnrollmentApplication\obj\Debug\EnrollmentApplication.Migrations.StudentUpdate_Illustration.resources
+C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\EnrollmentApplication\obj\Debug\EnrollmentApplication.Migrations.CoursesUpdate.resources
+C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\EnrollmentApplication\obj\Debug\EnrollmentApplication.Migrations.InvalidCharsUpdate.resources
+C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\EnrollmentApplication\obj\Debug\EnrollmentApplication.Migrations.InvalidCharsUpdate1.resources
+C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\EnrollmentApplication\obj\Debug\EnrollmentApplication.Migrations.StudentUpdate1.resources

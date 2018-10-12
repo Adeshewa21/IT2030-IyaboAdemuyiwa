@@ -34,5 +34,9 @@ namespace EnrollmentApplication.Models
         [Range(2018, 2019)]
         public virtual string EnrollmentYear { get; set; }
 
+        //[InvalidChars("@#$%")]      // Using default error message in the InvalidCharsAttributes.cs
+        [InvalidChars("@#$%", ErrorMessage = "Invalid input for Notes!!!")]      //When user provides error message it shows this intead of the default one.
+        public virtual string Notes { get; set; }
+
     }
 }
