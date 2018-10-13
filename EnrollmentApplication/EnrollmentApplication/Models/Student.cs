@@ -41,7 +41,7 @@ namespace EnrollmentApplication.Models
             if ((Address1 == Address2))
             {
                 //error
-                yield return (new ValidationResult("Address 2 cannot be the same as Address 1", new[] { "Address1" }));
+                yield return (new ValidationResult("Address 2 cannot be the same as Address 1", new[] { "Address2" }));
             }
 
             if (Zipcode.Length != 5)
