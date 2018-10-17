@@ -10,7 +10,6 @@ using EnrollmentApplication.Models;
 
 namespace EnrollmentApplication.Controllers
 {
-    // Resaved in order to have right lab number
     public class EnrollmentController : Controller
     {
         private EnrollmentDB db = new EnrollmentDB();
