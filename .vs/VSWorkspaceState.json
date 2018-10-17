@@ -8,7 +8,8 @@
     "\\EnrollmentApplication\\EnrollmentApplication\\Properties",
     "\\EnrollmentApplication\\EnrollmentApplication\\Views",
     "\\EnrollmentApplication\\EnrollmentApplication\\Views\\Enrollment",
-    "\\MVCMusicStoreApplication\\MVCMusicStoreApplication\\Models"
+    "\\MVCMusicStoreApplication",
+    "\\MVCMusicStoreApplication\\MVCMusicStoreApplication"
   ],
   "SelectedNode": "\\EnrollmentApplication\\EnrollmentApplication.sln",
   "PreviewInSolutionExplorer": false
