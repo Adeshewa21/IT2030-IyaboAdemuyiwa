@@ -1,16 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\EnrollmentApplication",
-    "\\EnrollmentApplication\\EnrollmentApplication",
     "\\EnrollmentApplication\\EnrollmentApplication\\Controllers",
     "\\EnrollmentApplication\\EnrollmentApplication\\Models",
     "\\EnrollmentApplication\\EnrollmentApplication\\Properties",
     "\\EnrollmentApplication\\EnrollmentApplication\\Views",
     "\\EnrollmentApplication\\EnrollmentApplication\\Views\\Enrollment",
-    "\\MVCMusicStoreApplication",
-    "\\MVCMusicStoreApplication\\MVCMusicStoreApplication"
+    "\\MVCMusicStoreApplication\\MVCMusicStoreApplication",
+    "\\MVCMusicStoreApplication\\MVCMusicStoreApplication\\Models",
+    "\\WebApplication_Indiv"
   ],
-  "SelectedNode": "\\EnrollmentApplication\\EnrollmentApplication.sln",
+  "SelectedNode": "\\WebApplication_Indiv\\WebApplication_Indiv.sln",
   "PreviewInSolutionExplorer": false
 }
