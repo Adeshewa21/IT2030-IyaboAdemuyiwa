@@ -17,7 +17,28 @@ namespace EnrollmentApplication.Controllers
         // GET: Students
         public ActionResult Index()
         {
-            return View(db.Students.ToList());
+            try
+                {
+                    var students = db.Students.Include(s => s.LastName).Include(s => s.FirstName);
+                    return View(db.Students.ToList());
+                }
+                catch (Exception ex)
+                {
+                    return View();
+                }
+        }
+
+        public ActionResult StudentOfTheMonth()
+        {
+            var student = GETStudentOfTheMonth();
+            return PartialView("_StudentOfTheMonth", student);
+        }
+
+        private Student GETStudentOfTheMonth()
+        {
+            var student = db.Students.OrderBy(s => System.Guid.NewGuid()).First();
+
+            return student;
         }
 
         // GET: Students/Details/5

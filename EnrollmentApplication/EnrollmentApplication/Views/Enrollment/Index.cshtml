@@ -5,6 +5,62 @@
 
 <h2>Index</h2>
 
+@*Search By Student *@
+<div class="panel panel-default">
+    <div class="panel-heading">Search by Student</div>
+    <div class="panel-body">
+        @using (
+                Ajax.BeginForm("SearchbyStudent", "Enrollment",
+                    new AjaxOptions
+                    {
+                        InsertionMode = InsertionMode.Replace,
+                        HttpMethod = "GET",
+                        UpdateTargetId = "searchresults",
+                        LoadingElementId = "ajax-loader",
+                        OnFailure = "searchFailed",
+                    }
+                )
+            )
+        {
+            <input type="text" name="q" />
+            <input type="submit" value="search" />
+            <div id="searchresults">
+
+            </div>
+        }
+    </div>
+
+</div>
+
+@*Search By Course *@
+<div class="panel panel-default">
+    <div class="panel-heading">Search by Course</div>
+    <div class="panel-body">
+        @using (
+                Ajax.BeginForm("SearchbyCourse", "Enrollment",
+                    new AjaxOptions
+                    {
+                        InsertionMode = InsertionMode.Replace,
+                        HttpMethod = "GET",
+                        UpdateTargetId = "searchresults",
+                        LoadingElementId = "ajax-loader",
+                        OnFailure = "searchFailed",
+                    }
+                )
+            )
+        {
+            <input type="text" name="q" />
+            <input type="submit" value="search" />
+            <div id="searchresults">
+
+            </div>
+        }
+    </div>
+
+</div>
+
+
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -24,18 +80,18 @@
         </th>
 
         @*
-        <th>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AssignedCampus)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EnrollmentSemester)        @* Its called strongly HTML Helpers
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EnrollmentYear)
-        </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssignedCampus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnrollmentSemester)        @* Its called strongly HTML Helpers
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnrollmentYear)
+            </th>
         *@
 
         <th></th>
@@ -43,44 +99,51 @@
 
     @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Student.LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Course.Coursetitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Grade)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Notes)
-        </td>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course.Coursetitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
 
-        @*
-        <td>
-            @Html.CheckBoxFor(modelItem => item.IsActive)
-        </td>
-        <td>
-            @Html.TextBoxFor(modelItem => item.AssignedCampus)
-        </td>
-        <td>
-            @Html.RadioButtonFor(modelItem => item.EnrollmentSemester, "Spring")
-            @Html.RadioButtonFor(modelItem => item.EnrollmentSemester, "Summer")
-            @Html.RadioButtonFor(modelItem => item.EnrollmentSemester, "Fall")
-        </td>
-        <td>
-            @Html.TextBoxFor(modelItem => item.EnrollmentYear)
-        </td>
+            @*
+                <td>
+                    @Html.CheckBoxFor(modelItem => item.IsActive)
+                </td>
+                <td>
+                    @Html.TextBoxFor(modelItem => item.AssignedCampus)
+                </td>
+                <td>
+                    @Html.RadioButtonFor(modelItem => item.EnrollmentSemester, "Spring")
+                    @Html.RadioButtonFor(modelItem => item.EnrollmentSemester, "Summer")
+                    @Html.RadioButtonFor(modelItem => item.EnrollmentSemester, "Fall")
+                </td>
+                <td>
+                    @Html.TextBoxFor(modelItem => item.EnrollmentYear)
+                </td>
 
-        *@
+            *@
 
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.EnrollmentId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.EnrollmentId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.EnrollmentId })
-        </td>
-    </tr>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.EnrollmentId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.EnrollmentId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.EnrollmentId })
+            </td>
+        </tr>
     }
 
 </table>
+@section Scripts
+{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/Apps/EnrollmentScript.js"></script>
+}
+
+

@@ -88,8 +88,8 @@ C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\MVCMusicStoreApplication\MVCMu
 C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\MVCMusicStoreApplication\MVCMusicStoreApplication\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\MVCMusicStoreApplication\MVCMusicStoreApplication\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\MVCMusicStoreApplication\MVCMusicStoreApplication\bin\Microsoft.AI.Web.xml
-C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\MVCMusicStoreApplication\MVCMusicStoreApplication\obj\Debug\MVCMusicStoreApplication.csprojResolveAssemblyReference.cache
 C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\MVCMusicStoreApplication\MVCMusicStoreApplication\obj\Debug\MVCMusicStoreApplication.csproj.CoreCompileInputs.cache
 C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\MVCMusicStoreApplication\MVCMusicStoreApplication\obj\Debug\MVCMusicStoreApplication.csproj.CopyComplete
 C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\MVCMusicStoreApplication\MVCMusicStoreApplication\obj\Debug\MVCMusicStoreApplication.dll
 C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\MVCMusicStoreApplication\MVCMusicStoreApplication\obj\Debug\MVCMusicStoreApplication.pdb
+C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\MVCMusicStoreApplication\MVCMusicStoreApplication\obj\Debug\MVCMusicStoreApplication.csprojAssemblyReference.cache

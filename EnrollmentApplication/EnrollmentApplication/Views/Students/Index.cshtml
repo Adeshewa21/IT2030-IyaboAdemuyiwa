@@ -6,6 +6,19 @@
 
 <h2>Index</h2>
 
+<div id="StudentOfTheMonth">
+    @Ajax.ActionLink("Student of the month",
+    "StudentOfTheMonth",
+    null,
+    new AjaxOptions
+    {
+        UpdateTargetId = "StudentOfTheMonth",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "GET"
+    },
+    new { @class = "btn btn-primary" })
+</div>
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -75,3 +88,8 @@
 }
 
 </table>
+@section Scripts
+{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+}
+

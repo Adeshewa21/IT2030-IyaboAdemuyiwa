@@ -17,9 +17,41 @@ namespace MVCMusicStoreApplication.Controllers
         // GET: StoreManager
         public ActionResult Index()
         {
-            var albums = db.Albums.Include(a => a.Artist).Include(a => a.Genre);
-            return View(albums.ToList());
+            try
+                {
+                    var albums = db.Albums.Include(a => a.Artist).Include(a => a.Genre);
+                    return View(albums.ToList());
+                }
+                catch (Exception ex)
+                {
+                return View();
+            }
         }
+        
+        public ActionResult DailyDeal()
+        {
+            var album = GetDailyDeal();
+            return PartialView("_DailyDeal", album);
+        }
+
+        private Album GetDailyDeal()
+        {
+            var album = db.Albums.OrderBy(a => System.Guid.NewGuid()).First();
+            album.Price *= 0.5m;    // If we want just the price  
+            return album;
+        }
+
+        public ActionResult ArtistSearch(string q)
+        {
+            var artists = GetArtists(q);    // Needs Fixed
+            return PartialView(artists);
+        }
+
+        private List<Artist> GetArtists(string searchstring)
+        {
+            return db.Artists.Where(a => a.Name.Contains(searchstring)).ToList();
+        }
+       
 
         // GET: StoreManager/Details/5
         public ActionResult Details(int? id)

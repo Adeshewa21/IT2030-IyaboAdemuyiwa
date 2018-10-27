@@ -1,0 +1,15 @@
+﻿@model EnrollmentApplication.Models.Student
+<h2>
+    Partial View
+</h2>
+
+@* In case she said no dont add panel to it, just delete the whole thing and leave jusst h2 delete the @Model in line 1*@
+<div>
+<div class="panel-heading">Here's the Student of the month</div>
+    <div class="panel">
+        <p>Last Name: @Model.LastName</p>
+        <p>First Name: @Model.FirstName</p>
+    </div>
+    @Html.ActionLink("Add to List", "AddToList", "EnrollmentList", new { id = Model.StudentId }, new { @CLASS = "btn btn-primary" })
+</div>
+

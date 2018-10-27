@@ -84,7 +84,6 @@ C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\Enrollme
 C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\EnrollmentApplication\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\EnrollmentApplication\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\EnrollmentApplication\bin\Microsoft.AI.Web.xml
-C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\EnrollmentApplication\obj\Debug\EnrollmentApplication.csprojResolveAssemblyReference.cache
 C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\EnrollmentApplication\obj\Debug\EnrollmentApplication.csproj.CoreCompileInputs.cache
 C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\EnrollmentApplication\obj\Debug\EnrollmentApplication.csproj.CopyComplete
 C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\EnrollmentApplication\obj\Debug\EnrollmentApplication.dll
@@ -102,3 +101,4 @@ C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\Enrollme
 C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\EnrollmentApplication\obj\Debug\EnrollmentApplication.Migrations.InvalidCharsUpdate.resources
 C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\EnrollmentApplication\obj\Debug\EnrollmentApplication.Migrations.InvalidCharsUpdate1.resources
 C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\EnrollmentApplication\obj\Debug\EnrollmentApplication.Migrations.StudentUpdate1.resources
+C:\Users\ademu\Source\Repos\IT2030-IyaboAdemuyiwa\EnrollmentApplication\EnrollmentApplication\obj\Debug\EnrollmentApplication.csprojAssemblyReference.cache
