@@ -3,8 +3,9 @@
     "",
     "\\EnrollmentApplication",
     "\\EnrollmentApplication\\EnrollmentApplication",
+    "\\EnrollmentApplication\\EnrollmentApplication\\Controllers",
     "\\EnrollmentApplication\\EnrollmentApplication\\Views"
   ],
-  "SelectedNode": "\\EnrollmentApplication\\EnrollmentApplication.sln",
+  "SelectedNode": "\\EnrollmentApplication\\EnrollmentApplication\\Controllers\\StudentsController.cs",
   "PreviewInSolutionExplorer": false
 }

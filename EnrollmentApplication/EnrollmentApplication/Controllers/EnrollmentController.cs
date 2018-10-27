@@ -21,6 +21,19 @@ namespace EnrollmentApplication.Controllers
             return View(enrollments.ToList());
         }
 
+        // Search by Student
+        public ActionResult SearchbyStudent(string q)
+        {
+            var students = GetStudents(q);
+            return PartialView(students);
+        }
+
+        private List<Student> GetStudents(string searchstring)
+        {
+            return db.Students.Where(e => e.LastName.Contains(searchstring)).ToList();
+        }
+
+        // Search by Course
         public ActionResult SearchbyCourse(string q)
         {
             var courses = GetCourses(q);
@@ -31,19 +44,6 @@ namespace EnrollmentApplication.Controllers
         {
             return db.Courses.Where(e => e.Coursetitle.Contains(searchstring)).ToList();
         }
-
-
-        public ActionResult SearchbyStudent(string q)
-        {
-            var students = GetStudents(q);
-            return PartialView(students);
-        }
-
-        private List<Student> GetStudents(string searchstring)
-        {
-            return db.Students.Where(e => e.LastName.Contains(searchstring)).ToList();
-        }    
-
 
         // GET: StoreManager/Details/5
         public ActionResult Details(int? id)
