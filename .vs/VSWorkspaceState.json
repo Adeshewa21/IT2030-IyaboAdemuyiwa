@@ -1,11 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\EnrollmentApplication",
-    "\\EnrollmentApplication\\EnrollmentApplication",
-    "\\EnrollmentApplication\\EnrollmentApplication\\Controllers",
-    "\\EnrollmentApplication\\EnrollmentApplication\\Views"
+    "\\Lab03",
+    "\\Lab03\\Lab03",
+    "\\Lab03\\Lab03\\Controllers",
+    "\\MVCMusicStoreApplication",
+    "\\MVCMusicStoreApplication\\MVCMusicStoreApplication",
+    "\\MVCMusicStoreApplication\\MVCMusicStoreApplication\\Models"
   ],
-  "SelectedNode": "\\EnrollmentApplication\\EnrollmentApplication\\Controllers\\StudentsController.cs",
+  "SelectedNode": "\\Lab03\\Lab03\\Controllers\\ProductController.cs",
   "PreviewInSolutionExplorer": false
 }

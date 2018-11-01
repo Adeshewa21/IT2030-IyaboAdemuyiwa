@@ -1,0 +1,25 @@
+﻿@model MVCMusicStoreApplication.Models.Album
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Album</h4>
+    <hr />
+
+    @foreach (var item in Model)
+    {
+        @Html.ActionLink(item.Title, "Index", new { id = item.AlbumId });
+        @Html.ActionLink(item.Price, "Index", new { id = item.AlbumId });
+    }
+
+
+
+</div>
+<div class="panel-body">
+    @Html.ActionLink("Add to Cart", "Index", "ShoppingCart", new { id = Model.AlbumId }, new { @class = "btn btn-primary" })
+
+</div>
