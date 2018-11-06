@@ -9,14 +9,12 @@
 
 @foreach (var item in Model)
 {
-    <ul>
-        <li>
-            @Html.ActionLink(item.Title, "Index", new { id = item.AlbumId });
-        </li>
-    </ul>
+<ul>
+    <li>
+        @Html.ActionLink(item.Title, "Details", new { id = item.AlbumId });
+        
+    </li>
+</ul>
 }
-
-
-
 
 
