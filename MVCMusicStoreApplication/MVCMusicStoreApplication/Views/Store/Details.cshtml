@@ -4,28 +4,71 @@
     ViewBag.Title = "Details";
 }
 
-
-
+<h2>Details</h2>
 <div>
-    <h4>Details</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-
-    </dl>
+    <h2>
+        @Model.Title
+    </h2>
+    <div>
+        <p>
+            <img alt="@Model.Title" src="@Url.Content(Model.AlbumArtUrl)" />
+        </p>
+        <div id="album-details">
+            <p>
+                <em>Artist:</em>
+                @Model.Artist.Name
+            </p>
+            <p>
+                <em>Price:</em>
+                @String.Format("{0:F}", Model.Price)
+            </p>
+        </div>
+    </div>
 </div>
-@Html.ActionLink("Add to Cart", "AddtoCart", "ShoppingCart", new { @class = "btn btn-primary" })
+<p class="button">
+    @Html.ActionLink("Add to Cart", "AddtoCart", "ShoppingCart", new { id = Model.AlbumId }, null)
+</p>
+@*@Html.ActionLink("Add to Cart", "AddtoCart", "ShoppingCart", new { id = Model.AlbumId }, new { @class = "btn btn-primary" }) *@
+
+
+
+
+
+
+
+
+@*
+    @model MVCMusicStoreApplication.Models.Album
+
+    @{
+        ViewBag.Title = "Details";
+    }
+
+    <div>
+        <h4>Details</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+        </dl>
+    </div>
+    <p class="button">
+        @Html.ActionLink("Add to Cart", "AddtoCart", "ShoppingCart", new { id = Model.AlbumId }, null )
+    </p>
+    @Html.ActionLink("Add to Cart", "AddtoCart", "ShoppingCart", new { id = Model.AlbumId }, new { @class = "btn btn-primary" }) *@
+
+

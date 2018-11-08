@@ -164,6 +164,7 @@
     <Compile Include="Models\MVCMusicStoreApplicationDB.cs" />
     <Compile Include="Models\SampleData.cs" />
     <Compile Include="Models\ShoppingCart.cs" />
+    <Compile Include="Models\ShoppingCartRemoveViewModel.cs" />
     <Compile Include="Models\ShoppingCartViewModel.cs" />
     <Compile Include="Models\Store.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

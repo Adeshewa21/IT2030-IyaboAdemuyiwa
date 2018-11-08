@@ -3,15 +3,37 @@
     ViewBag.Title = "Browse";
 }
 
-<h2>Browse</h2>
+<h2>Browse by Genre</h2>
 
-<p>Browse by Genres</p>
-
-@foreach (var item in Model) 
-{
 <ul>
-    <li>
-        @Html.ActionLink(item.Name, "Index", new { id = item.GenreId })
-    </li>
+    @foreach (var genre in Model)
+    {
+        <li>
+            @Html.ActionLink(genre.Name, "Index", new { id = genre.GenreId })
+        </li>
+    }
 </ul>
-}
+
+
+
+
+@*
+    @model IEnumerable<MVCMusicStoreApplication.Models.Genre>
+    @{
+        ViewBag.Title = "Browse";
+    }
+
+    <h2>Browse</h2>
+
+    <p>Browse by Genres</p>
+
+    @foreach (var item in Model)
+    {
+    <ul>
+        <li>
+            @Html.ActionLink(item.Name, "Index", new { id = item.GenreId })
+        </li>
+    </ul>
+    }
+
+*@

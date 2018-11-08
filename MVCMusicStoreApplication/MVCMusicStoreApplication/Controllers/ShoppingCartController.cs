@@ -10,6 +10,8 @@ namespace MVCMusicStoreApplication.Controllers
 {
     public class ShoppingCartController : Controller
     {
+        MVCMusicStoreApplicationDB dbContext = new MVCMusicStoreApplicationDB();
+
         // GET: ShoppingCart
         public ActionResult Index()
         {
@@ -22,7 +24,7 @@ namespace MVCMusicStoreApplication.Controllers
             return View(vm); 
         }
 
-
+        
         // GET: /ShoppingCart/AddToCart/5
         public ActionResult AddToCart(int id)
         {
@@ -35,10 +37,27 @@ namespace MVCMusicStoreApplication.Controllers
         }
 
         // Post: Ajax Call
-        [HttpPost]        
-        public ActionResult RemoveFromCart()
+        [HttpPost]
+        public ActionResult RemoveFromCart(int id)
         {
-            return View();
+            // id == RecordId
+            ShoppingCart cart = ShoppingCart.GetCart(this.HttpContext);
+            string albumTitle = dbContext.Carts.SingleOrDefault(c => c.RecordId == id).AlbumSelected.Title;
+            //string albumTitle = dbContext.Carts.SingleOrDefault(c => c.RecordId == id).AlbumSelected.Title;
+            int itemCnt = cart.RemoveFromCart(id);
+
+
+            ShoppingCartRemoveViewModel vm = new ShoppingCartRemoveViewModel()
+            {
+                ItemCount = itemCnt,
+                DeleteId = id,
+                CartTotal = cart.GetCartTotal(),
+                //CartCount = 0,
+                Message = albumTitle + " has been removed from the cart"
+
+            };
+
+            return Json(vm);
         }
     }
 }

@@ -3,18 +3,46 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Here are the lists of Albums</h2>
 
-<p>Here are lists for Albums</p>
-
-@foreach (var item in Model)
-{
 <ul>
-    <li>
-        @Html.ActionLink(item.Title, "Details", new { id = item.AlbumId });
-        
-    </li>
+    @foreach (var item in Model)
+    {
+        <li>
+            @Html.ActionLink(item.Title, "Details", new { id = item.AlbumId });
+
+        </li>
+    }
 </ul>
-}
+@Html.ActionLink("Back to Browse", "Browse")
 
 
+
+
+
+
+
+
+
+@*
+    @model IEnumerable<MVCMusicStoreApplication.Models.Album>
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <h2>Index</h2>
+
+    <p>Here are lists for Albums</p>
+
+    @foreach (var item in Model)
+    {
+        <ul>
+            <li>
+                @Html.ActionLink(item.Title, "Details", new { id = item.AlbumId });
+
+            </li>
+        </ul>
+    }
+
+
+*@

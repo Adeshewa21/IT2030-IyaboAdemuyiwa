@@ -1,10 +1,17 @@
-﻿@model MVCMusicStoreApplication.Models.ViewModels.ShoppingCartViewModel 
+﻿@model MVCMusicStoreApplication.Models.ViewModels.ShoppingCartViewModel
 @*The line 1 doesn't have to be IEnumerable because it is not like a list of shoppingcart view models we are only getting one object of the collection of another object*@
 
 @{
     ViewBag.Title = "ShoppingCart";
 }
+@section Scripts
+{
+    <script src="~/Scripts/Apps/MusicStoreScript.js"></script>
+}
+
 <h2>Here's your shopping cart</h2>
+<br />
+<div id="update-message"></div>
 <div>
     <table>
         <tr>
@@ -14,21 +21,24 @@
             <th>Quantity</th>
             <th></th>
         </tr>
-        <tr>
-            @foreach (var item in Model.CartItems)  
-            {
+        @foreach (var item in Model.CartItems)
+        {
+            <tr id="record-@item.RecordId">
                 <td>@item.AlbumSelected.Title</td>
                 <td>@item.AlbumSelected.Price</td>
-                <td>@item.Count</td>
-                <td><a href="#">Remove</a></td>
-            }
-        </tr>
+                <td id="item-count-@item.RecordId">@item.Count</td>
+                <td><a href="#" class="RemoveLink" data-id="@item.RecordId">Remove</a></td>
+            </tr>
+        }
         <tr>
             <td>Cart Total</td>
             <td></td>
             <td></td>
-            <td>@Model.CartTotal</td>
+            <td id="cart-total">@Model.CartTotal</td>
         </tr>
     </table>
 </div>
+<p class="button">
+    @Html.ActionLink("Back to Browse", "Browse", "Store")
+</p>
 
