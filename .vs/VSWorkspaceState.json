@@ -1,16 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\EnrollmentApplication",
-    "\\EnrollmentApplication\\EnrollmentApplication",
-    "\\EnrollmentApplication\\EnrollmentApplication\\Controllers",
-    "\\EnrollmentApplication\\EnrollmentApplication\\Views",
-    "\\EnrollmentApplication\\EnrollmentApplication\\Views\\Students",
-    "\\MVCMusicStoreApplication",
-    "\\MVCMusicStoreApplication\\MVCMusicStoreApplication",
-    "\\MVCMusicStoreApplication\\MVCMusicStoreApplication\\Views",
-    "\\MVCMusicStoreApplication\\MVCMusicStoreApplication\\Views\\Store"
+    "\\EventApplication",
+    "\\EventApplication\\EventApplication",
+    "\\EventApplication\\EventApplication\\Views",
+    "\\EventApplication\\EventApplication\\Views\\Account"
   ],
-  "SelectedNode": "\\MVCMusicStoreApplication\\MVCMusicStoreApplication\\Views\\Store\\Details.cshtml",
+  "SelectedNode": "\\EventApplication\\EventApplication\\Views\\Account\\_ExternalLoginsListPartial.cshtml",
   "PreviewInSolutionExplorer": false
 }
