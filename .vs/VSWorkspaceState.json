@@ -1,11 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\EventApplication",
-    "\\EventApplication\\EventApplication",
-    "\\EventApplication\\EventApplication\\Views",
-    "\\EventApplication\\EventApplication\\Views\\Account"
+    "\\webapplication",
+    "\\webapplication\\webapplication",
+    "\\webapplication\\webapplication\\Controllers",
+    "\\WebApplication_Indiv",
+    "\\WebApplication_Indiv\\WebApplication_Indiv",
+    "\\WebApplication_Indiv\\WebApplication_Indiv\\Models",
+    "\\WebApplication_Indiv\\WebApplication_Indiv\\Views",
+    "\\WebApplication_Indiv\\WebApplication_Indiv\\Views\\Account"
   ],
-  "SelectedNode": "\\EventApplication\\EventApplication\\Views\\Account\\_ExternalLoginsListPartial.cshtml",
+  "SelectedNode": "\\webapplication\\webapplication.sln",
   "PreviewInSolutionExplorer": false
 }

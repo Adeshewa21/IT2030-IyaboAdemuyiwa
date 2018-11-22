@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace MovieStore.Models
+namespace MovieStoreApplication.Models
 {
     public class Movie
     {
