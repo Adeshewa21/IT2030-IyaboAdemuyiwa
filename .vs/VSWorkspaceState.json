@@ -1,15 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\webapplication",
-    "\\webapplication\\webapplication",
-    "\\webapplication\\webapplication\\Controllers",
     "\\WebApplication_Indiv",
     "\\WebApplication_Indiv\\WebApplication_Indiv",
     "\\WebApplication_Indiv\\WebApplication_Indiv\\Models",
     "\\WebApplication_Indiv\\WebApplication_Indiv\\Views",
     "\\WebApplication_Indiv\\WebApplication_Indiv\\Views\\Account"
   ],
-  "SelectedNode": "\\webapplication\\webapplication.sln",
+  "SelectedNode": "\\EventStore",
   "PreviewInSolutionExplorer": false
 }

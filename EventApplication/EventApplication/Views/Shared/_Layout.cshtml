@@ -6,42 +6,59 @@
     <title>@ViewBag.Title - EventStore</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
 </head>
 <body>
-    <div id="header">
-        @Scripts.Render("~/bundles/jquery")
-        <h1>
-            EVENT STORE
-        </h1>
 
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                @if (User.Identity.IsAuthenticated)
-                {
-                    // Navigation links after user logs in
-                    <li><a href="id=current">Find an Event</a></li>
-                    <li><a href="OrganizeanEvents">Organzise an Event</a></li>
-                    <li><a href="id=Ticket">Ticket</a></li>
-                }
-                else
-                {
-                    // Navigation links before user logs in
-                    <li><a href="id=current">Find an Event</a></li>
-                    <li><a href="id=Account/OrganizinganEvents">Organzise an Event</a></li>
-                    <li><a href="id=Summary/Ticket">Ticket</a></li>
-                }
-            </ul>
-            @Html.Partial("_LoginPartial")
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                @Html.ActionLink("Event Unlimited", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                <ul id="navlist">
+
+                    <li class="first">
+                        <a href="/"
+                           id="Event">Find an Events</a>
+                    </li>
+
+                    <li>
+                        <a href="/"
+                           id="EventType">Organize an Event</a>
+                    </li>
+
+                    <li>
+                        <a href="/"
+                           id="Order">Ticket Ordered</a>
+                    </li>
+
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Copyright of the Year</p>
+            <p>&copy; @DateTime.Now.Year</p>
         </footer>
     </div>
 
+    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>

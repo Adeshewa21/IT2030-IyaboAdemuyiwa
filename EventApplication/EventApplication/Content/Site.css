@@ -1,30 +1,4 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
-
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
-}
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
-
-
-* {
+﻿* {
     margin: 0px;
     padding: 0px;
     border: none;
@@ -59,7 +33,7 @@ body {
     #header h1 {
         font-size: 18px;
         float: left;
-        /*background: url.(/content/Images/logo.png) no-repeat; */
+        background: url.(/content/Images/logo.png) no-repeat;
         padding: 45px 0px 5px 0px;
     }
 
@@ -68,7 +42,7 @@ body {
 #promotion {
     height: 300px;
     width: 700px;
-    /*background: url.(/content/Images/home-showcase.png) no-repeat;*/
+    background: url.(/content/Images/home-showcase.png) no-repeat;
 }
 
 
@@ -412,3 +386,32 @@ th, td {
 tr:hover {
     background-color: #fff;
 }
+
+
+/*
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges *
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default *
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+*/

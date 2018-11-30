@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{88926C6E-1000-4F33-998C-12AB96610CA0}</ProjectGuid>
+    <ProjectGuid>{3A1A7FCD-368E-4EAA-A97E-EFC7E1AE4AB1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EventApplication.Tests</RootNamespace>
@@ -100,7 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EventApplication\EventApplication.csproj">
-      <Project>{FAABE954-A608-42E0-B183-7496C6813269}</Project>
+      <Project>{F49D43BE-D1FB-4C6F-A358-3C5260050A36}</Project>
       <Name>EventApplication</Name>
     </ProjectReference>
   </ItemGroup>
