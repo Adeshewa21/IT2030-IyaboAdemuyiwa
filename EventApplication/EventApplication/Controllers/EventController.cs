@@ -18,6 +18,7 @@ namespace EventApplication.Controllers
         public ActionResult Index()
         {
             //var events = db.Events.Include(e => e.Type);
+            //For editing
             return View(db.Events.ToList());
         }
 
