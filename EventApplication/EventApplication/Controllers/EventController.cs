@@ -17,8 +17,6 @@ namespace EventApplication.Controllers
         // GET: Event
         public ActionResult Index()
         {
-            //var events = db.Events.Include(e => e.Type);
-            //For editing
             return View(db.Events.ToList());
         }
 
@@ -40,7 +38,6 @@ namespace EventApplication.Controllers
         // GET: Event/Create
         public ActionResult Create()
         {
-            ViewBag.EventTypeId = new SelectList(db.EventTypes, "EventTypeId", "EventTypeId");
             return View();
         }
 
@@ -49,7 +46,7 @@ namespace EventApplication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EventId,Type,Title,Description,StartDate,EndDate,MaxTickets,AvailableTickets,OrganizerName,OrganizerContactInfo,City,State")] Event @event)
+        public ActionResult Create([Bind(Include = "EventId,Title,Description,StartDate,EndDate,MaxTickets,AvailableTickets,OrganizerName,OrganizerContactInfo,City,State")] Event @event)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +55,6 @@ namespace EventApplication.Controllers
                 return RedirectToAction("Index");
             }
 
-            /*ViewBag.EventTypeId = new SelectList(db.EventTypes, "EventTypeId", "EventTypeId", @event.EventTypeId);*/
             return View(@event);
         }
 
@@ -74,7 +70,6 @@ namespace EventApplication.Controllers
             {
                 return HttpNotFound();
             }
-            /*ViewBag.EventTypeId = new SelectList(db.EventTypes, "EventTypeId", "EventTypeId", @event.EventTypeId);*/
             return View(@event);
         }
 
@@ -83,7 +78,7 @@ namespace EventApplication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EventId,Type,Title,Description,StartDate,EndDate,MaxTickets,AvailableTickets,OrganizerName,OrganizerContactInfo,City,State")] Event @event)
+        public ActionResult Edit([Bind(Include = "EventId,Title,Description,StartDate,EndDate,MaxTickets,AvailableTickets,OrganizerName,OrganizerContactInfo,City,State")] Event @event)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +86,6 @@ namespace EventApplication.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            /*ViewBag.EventTypeId = new SelectList(db.EventTypes, "EventTypeId", "EventTypeId", @event.EventTypeId);*/
             return View(@event);
         }
 

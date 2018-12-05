@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - EventStore</title>
+    @*@Styles.Render("~/Content/css")*@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -27,19 +28,36 @@
                 </ul>
                 <ul id="navlist">
                     <li class="first">
-                        <a href="/"
+                        <a href="@Url.Action("Index", "Event")"
                            id="Event">Find an Events</a>
                     </li>
                     <li>
-                        <a href="/"
+                        <a href="@Url.Action("Create", "Event")"
                            id="EventType">Organize an Event</a>
                     </li>
                     <li>
                         <a href="/"
                            id="Order">Ticket Ordered</a>
                     </li>
+                    <li>@Html.Partial("_LoginPartial")</li>  
                 </ul>
-                @Html.Partial("_LoginPartial")
+
+                @*<ul id="navlist">
+            <li class="first">
+                <a href="/"
+                   id="Event">Find an Events</a>
+            </li>
+            <li>
+                <a href="/"
+                   id="EventType">Organize an Event</a>
+            </li>
+            <li>
+                <a href="/"
+                   id="Order">Ticket Ordered</a>
+            </li>
+        </ul>
+                *
+                @Html.Partial("_LoginPartial") @*This makes the register and login before the three lists*@
             </div>
         </div>
     </div>

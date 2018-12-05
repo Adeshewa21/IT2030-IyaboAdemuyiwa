@@ -11,10 +11,11 @@ namespace EventApplication.Models
     {
         public virtual int EventId { get; set; }
 
-       // public virtual int EventTypeId { get; set; }
+        [Display(Name = "Type")]
+        public virtual EventType EventType { get; set; }      // You need the class for the EvenType and not the ID or Type
 
-        [Display(Name = "Event Type")]
-        public virtual Type Type { get; set; }
+        /*[Display(Name = "Event Type")]
+        public virtual Type Type { get; set; }*/
 
         [Display(Name = "Event Title")]
         [Required]
