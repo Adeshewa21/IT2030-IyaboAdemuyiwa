@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C8D18840-11DF-4298-B7D5-CC78FD70E56B}</ProjectGuid>
+    <ProjectGuid>{F0CF1581-DAB4-4B1A-BE44-58CE3A024551}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -203,17 +203,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812011844157_Type.cs" />
-    <Compile Include="Migrations\201812011844157_Type.Designer.cs">
-      <DependentUpon>201812011844157_Type.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812012109021_TypeUdate.cs" />
-    <Compile Include="Migrations\201812012109021_TypeUdate.Designer.cs">
-      <DependentUpon>201812012109021_TypeUdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812042257408_Type1.cs" />
-    <Compile Include="Migrations\201812042257408_Type1.Designer.cs">
-      <DependentUpon>201812042257408_Type1.cs</DependentUpon>
+    <Compile Include="Migrations\201812050858480_EventContextDB.cs" />
+    <Compile Include="Migrations\201812050858480_EventContextDB.Designer.cs">
+      <DependentUpon>201812050858480_EventContextDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -301,7 +293,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Order\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -317,14 +308,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812011844157_Type.resx">
-      <DependentUpon>201812011844157_Type.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812012109021_TypeUdate.resx">
-      <DependentUpon>201812012109021_TypeUdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812042257408_Type1.resx">
-      <DependentUpon>201812042257408_Type1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812050858480_EventContextDB.resx">
+      <DependentUpon>201812050858480_EventContextDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -343,9 +328,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>5093</DevelopmentServerPort>
+          <DevelopmentServerPort>17231</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:5093/</IISUrl>
+          <IISUrl>http://localhost:17231/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

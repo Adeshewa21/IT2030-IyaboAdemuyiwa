@@ -14,8 +14,6 @@ namespace EventApplication
     {
         protected void Application_Start()
         {
-            //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<EventContextDB>());
-            //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<EventTypeContextDB>());
             Database.SetInitializer(new SampleData());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

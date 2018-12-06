@@ -10,48 +10,62 @@
 <div class="row">
     <div class="col-md-4">
         <h2>Find an Event</h2>
+
         <a href="EventType" class="btn btn-default">Event or Event Type</a>
         <a class="btn btn-default" href="/">Location, City or State</a>
         <input type="submit" value="Search" />
-
     </div>
     <div class="col-md-4">
-        <p><a class="btn btn-default" href="/">Click here to see Last Minute Deals!</a></p>
+            <p><a class="btn btn-default" href="/">Click here to see Last Minute Deals!</a></p>
+        </div>
+        @*
+
+    <div id="dailydeal">
+        @Ajax.ActionLink("Click here to see Last Minute Deals!",
+        "DailyDeal",
+        null,
+        new AjaxOptions
+        {
+            UpdateTargetId = "daildeal",
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "GET"
+        },
+        new { @class = "btn btn-primary"})
     </div>
 </div>
+@*<div class="panel panel-default">
+        <div class="panel-heading">
+            Event Last Minute Search</div>
+        <div class="panel-body">
+            @using (
+                Ajax.BeginForm("LastMinuteDeals", "Event",
+                    new AjaxOptions
+                    {
+                        InsertionMode = InsertionMode.Replace,
+                        HttpMethod = "GET",
+                        UpdateTargetId = "searchresults",
+                        LoadingElementId = "ajax-loader",
+                        OnFailure = "searchFailed"
+                    }
+                )
+            )
+            {
+                <input type="text" name="q" />
+                <input type="submit" value="search" />
+            }
+            <div id="searchresults">
 
-
-@*
-    @{
-        ViewBag.Title = "Home Page";
-    }
-
-    <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+            </div>
         </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </div>
-    </div>
 
+    </div >
 *@
+@section Scripts
+{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    @* 
+    Not sure yet of the EventScript make sure you check in case error comes up    
+    *
+    <script src="~/Scripts/Apps/EventScript.js"></script>
+        *@
+}

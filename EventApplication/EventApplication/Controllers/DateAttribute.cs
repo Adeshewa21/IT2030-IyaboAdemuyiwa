@@ -19,5 +19,5 @@ namespace EventApplication.Controllers
                 return new ValidationResult("Date cannot be in the past");
             }
         }
-    }    
+    }
 }

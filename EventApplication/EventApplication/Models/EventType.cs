@@ -12,8 +12,8 @@ namespace EventApplication.Models
 
         public virtual int EventTypeId { get; set; }
 
+        [StringLength(50, ErrorMessage = "Type cannot exceed 50 characters")]
         public virtual string Type { get; set; }
 
     }
 }
-

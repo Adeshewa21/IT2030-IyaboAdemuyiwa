@@ -17,9 +17,38 @@ namespace EventApplication.Controllers
         // GET: Event
         public ActionResult Index()
         {
-            return View(db.Events.ToList());
+            var events = db.Events.Include(e => e.EventType);
+            return View();
         }
+/*
+        public ActionResult DailyDeal()
+        {
+            var event = GetDailyDeal();
+            return PartialViewResult("_DailyDeal", event);
+        }
+        private GetDailyDeal()
+        {
+            var event = db.Events.OrderBy(e => Systm.Guid.NewGuid()).First()
+            event.Title,
+            event.StartDate,
+            event.StartTime,
+            event.Location
+        }
+*/
 
+/*
+        public ActionResult LastMinuteDeals()
+        {
+            var events = GetEvents(q)
+            return PartialView();
+        }
+*
+        private List<Event> GetEvents(string searchstring)
+        {
+            return db.Events.Where(e => e.Title.Contains(searchstring)).ToList();
+            
+        }
+        */
         // GET: Event/Details/5
         public ActionResult Details(int? id)
         {
@@ -38,6 +67,7 @@ namespace EventApplication.Controllers
         // GET: Event/Create
         public ActionResult Create()
         {
+            ViewBag.EventTypeId = new SelectList(db.EventTypes, "EventTypeId", "Type");
             return View();
         }
 
@@ -46,7 +76,7 @@ namespace EventApplication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EventId,Title,Description,StartDate,EndDate,MaxTickets,AvailableTickets,OrganizerName,OrganizerContactInfo,City,State")] Event @event)
+        public ActionResult Create([Bind(Include = "EventId,EventTypeId,Title,Description,StartDate,EndDate,MaxTickets,AvailableTickets,OrganizerName,OrganizerContactInfo,City,State")] Event @event)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +85,7 @@ namespace EventApplication.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.EventTypeId = new SelectList(db.EventTypes, "EventTypeId", "Type", @event.EventTypeId);
             return View(@event);
         }
 
@@ -70,6 +101,7 @@ namespace EventApplication.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.EventTypeId = new SelectList(db.EventTypes, "EventTypeId", "Type", @event.EventTypeId);
             return View(@event);
         }
 
@@ -78,7 +110,7 @@ namespace EventApplication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EventId,Title,Description,StartDate,EndDate,MaxTickets,AvailableTickets,OrganizerName,OrganizerContactInfo,City,State")] Event @event)
+        public ActionResult Edit([Bind(Include = "EventId,EventTypeId,Title,Description,StartDate,EndDate,MaxTickets,AvailableTickets,OrganizerName,OrganizerContactInfo,City,State")] Event @event)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +118,7 @@ namespace EventApplication.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.EventTypeId = new SelectList(db.EventTypes, "EventTypeId", "Type", @event.EventTypeId);
             return View(@event);
         }
 

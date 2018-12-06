@@ -6,16 +6,15 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace EventApplication.Models
-{//[Authorize]
+{
     public class Event
     {
         public virtual int EventId { get; set; }
 
         [Display(Name = "Type")]
-        public virtual EventType EventType { get; set; }      // You need the class for the EvenType and not the ID or Type
+        public virtual int EventTypeId { get; set; }
 
-        /*[Display(Name = "Event Type")]
-        public virtual Type Type { get; set; }*/
+        public virtual EventType EventType { get; set; }      // You need the class for the EvenType and not the ID or Type
 
         [Display(Name = "Event Title")]
         [Required]
@@ -57,7 +56,6 @@ namespace EventApplication.Models
         [Required]
         public virtual string State { get; set; }
 
-
         public IEnumerable<ValidationResult> Validate(ValidationContext validation)
         {
             if ((StartDate == EndDate))
@@ -79,8 +77,6 @@ namespace EventApplication.Models
                 // error
                 yield return (new ValidationResult("Available Tickets cannot be 0", new[] { "AvailableTickets" }));
             }
-
         }
-
     }
 }
