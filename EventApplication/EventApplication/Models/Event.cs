@@ -26,10 +26,12 @@ namespace EventApplication.Models
         public virtual string Description { get; set; }
 
         [Display(Name = "Start Date")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         [Required]
         public virtual DateTime StartDate { get; set; }
 
         [Display(Name = "End Date")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         [Required]
         public virtual DateTime EndDate { get; set; }
 

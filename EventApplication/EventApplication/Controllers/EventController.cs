@@ -17,38 +17,17 @@ namespace EventApplication.Controllers
         // GET: Event
         public ActionResult Index()
         {
-            var events = db.Events.Include(e => e.EventType);
-            return View();
+            try
+            {
+                var events = db.Events.Include(e => e.EventType);
+                return View(events.ToList());
+            }
+            catch (Exception ex)
+            {
+                return View();
+            }        
         }
-/*
-        public ActionResult DailyDeal()
-        {
-            var event = GetDailyDeal();
-            return PartialViewResult("_DailyDeal", event);
-        }
-        private GetDailyDeal()
-        {
-            var event = db.Events.OrderBy(e => Systm.Guid.NewGuid()).First()
-            event.Title,
-            event.StartDate,
-            event.StartTime,
-            event.Location
-        }
-*/
 
-/*
-        public ActionResult LastMinuteDeals()
-        {
-            var events = GetEvents(q)
-            return PartialView();
-        }
-*
-        private List<Event> GetEvents(string searchstring)
-        {
-            return db.Events.Where(e => e.Title.Contains(searchstring)).ToList();
-            
-        }
-        */
         // GET: Event/Details/5
         public ActionResult Details(int? id)
         {

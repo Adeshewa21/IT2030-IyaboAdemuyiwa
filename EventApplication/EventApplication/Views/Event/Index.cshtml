@@ -92,10 +92,26 @@
     }
 
 </table>
-@*
-@section Scripts
-{
-    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-    <script src="~/Scripts/Apps/EventScript.js"></script>
-}
+
+@* Last Minute Deals code start from here *
+    <div id="dailydeal">
+        @Ajax.ActionLink("Click here to see last minutes deals!",
+        "DailyDeal",
+        null,
+        new AjaxOptions {
+            UpdateTargetId = "dailydeal",
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "GET"
+        },
+        new {@class = "btn btn-primary"})
+    </div>
+    // IT WAS COMMENTED OUT BECUASE IT HAS TO BE IN THE HOMEPAGE AND NOT A MODEL INDEX VIEW CHECK VIEW > HOME > INDEX
+    WATCH OUT IT WAS CHANGED FROM DAILYDEAL TO LASTMINUTEDEALS
+*@
+
+@* I added it to the Home Index because that's where the last minute deal is. The section Script is for Last Minute Deals
+    @section Scripts
+    {
+        <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    }
 *@

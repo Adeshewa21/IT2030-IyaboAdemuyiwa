@@ -10,9 +10,31 @@ namespace EventApplication.Controllers
     {
         public ActionResult Index()
         {
+            /*
+             try
+            {
+                var events = db.Events.Include(e => e.Home);
+                return View(events.ToList());
+            }
+            catch (Exception ex)
+            {
+                return View();
+            }              
+             */
             return View();
         }
+        /*
+        public ActionResult LastMinuteDeals()
+        {
+            var event = GetLastMinuteDeals();
+            return PartialView("_LastMinuteDeals")
+        }
+        private Event LastMinuteDeals()
+        {
+            return Event;
+        }
 
+        */
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
