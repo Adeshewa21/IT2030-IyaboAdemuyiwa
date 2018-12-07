@@ -1,48 +1,45 @@
-﻿@model IEnumerable<EventApplication.Models.Event>
+﻿@*
+<h2>
+    Daily Deal
+</h2>
+*@
 
-@{
-    ViewBag.Title = "_LastMinuteDeals";
-}
 
-<h2>Last Minute Deals</h2>
-
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        
-        <th>
-            @Html.DisplayNameFor(model => model.StartDate)
-        </th>        
-        <th>
-            @Html.DisplayNameFor(model => model.City)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.State)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            
-            <td>
-                @Html.DisplayFor(modelItem => item.StartDate)
-            </td>
-            
-            <td>
-                @Html.DisplayFor(modelItem => item.City)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.State)
-            </td>
-        </tr>
+    @model IEnumerable<EventApplication.Models.Event>
+    @{
+        ViewBag.Title = "Last Minute Deals";
     }
 
-</table>
+    <table class="table">
+        <tr>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @Html.ActionLink(item.Title, "Details", new { id = item.EventId })
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.City)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.State)
+                </td>
+            }
+        </tr>
+    </table>
+
+
+
+
+        <table class="table">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td></td>
+                </tr>
+            }
+
+        </table>*@
 
