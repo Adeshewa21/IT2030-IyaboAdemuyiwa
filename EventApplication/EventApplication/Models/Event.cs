@@ -16,7 +16,7 @@ namespace EventApplication.Models
 
         public virtual EventType EventType { get; set; }      // You need the class for the EvenType and not the ID or Type
 
-        [Display(Name = "Event Title")]
+        [Display(Name = "Title")]
         [Required]
         [StringLength(50)]
         public virtual string Title { get; set; }

@@ -19,6 +19,8 @@ namespace EventApplication.Controllers
 {
     public class HomeController : Controller
     {
+        private EventContextDB db = new EventContextDB();
+
         public ActionResult Index()
         {
          
@@ -27,18 +29,38 @@ namespace EventApplication.Controllers
         
         public ActionResult LastMinuteDeals()
         {
-            return PartialView("_LastMinuteDeals");
+            try
+            {
+                DateTime lastMinuteDealsDate = DateTime.Now.AddDays(2);
+
+                var events = db.Events.Include(e => e.EventType)
+                    .Where(e => e.StartDate <= lastMinuteDealsDate);
+
+                return PartialView("_LastMinuteDeals", events.ToList());
+
+            }
+            catch (Exception ex)
+            {
+                return View();
+            };
         }
         
-
-        /*    
-        private Event LastMinuteDeals()
+        public ActionResult FindanEvent(string EventType)
         {
-            var event = db.Events.OrderBy(e => System.Guid.NewGuid()).Second();
-
-            return event;
+            var events = GetFindanEvent(EventType);
+            return PartialView(events);
         }
-        */
+
+        private List<Event> GetFindanEvent(string searchstring)
+        {
+            return db.Events
+                .Where(e => e.EventType.Type.Contains(searchstring))
+                .Where(e => e.Title.Contains(searchstring))
+                .Where(e => e.City.Contains(searchstring))
+                .Where( e => e.State.Contains(searchstring)).ToList();
+            
+            //return db.Events.Where(e => e.Contains(searchstring)).ToList();
+        }
         
         public ActionResult About()
         {
