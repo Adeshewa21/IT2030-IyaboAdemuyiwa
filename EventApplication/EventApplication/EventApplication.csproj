@@ -221,8 +221,6 @@
     <Compile Include="Models\EventContextDB.cs" />
     <Compile Include="Models\EventType.cs" />
     <Compile Include="Models\EventTypeContextDB.cs" />
-    <Compile Include="Models\Home.cs" />
-    <Compile Include="Models\HomeContextDB.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -299,11 +297,11 @@
     <Content Include="Views\EventType\Details.cshtml" />
     <Content Include="Views\EventType\Edit.cshtml" />
     <Content Include="Views\EventType\Index.cshtml" />
+    <Content Include="Views\FindanEvent.cshtml" />
     <Content Include="Views\Home\_LastMinuteDeals.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\HomeContextDB\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

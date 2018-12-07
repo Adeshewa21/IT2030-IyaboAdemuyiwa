@@ -1,8 +1,19 @@
-﻿using System;
+﻿/*using EventApplication.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+*/
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Linq;
+using System.Net;
+using System.Web;
+using System.Web.Mvc;
+using EventApplication.Models;
 
 namespace EventApplication.Controllers
 {
@@ -10,31 +21,25 @@ namespace EventApplication.Controllers
     {
         public ActionResult Index()
         {
-            /*
-             try
-            {
-                var events = db.Events.Include(e => e.Home);
-                return View(events.ToList());
-            }
-            catch (Exception ex)
-            {
-                return View();
-            }              
-             */
+         
             return View();
         }
-        /*
+        
         public ActionResult LastMinuteDeals()
         {
-            var event = GetLastMinuteDeals();
-            return PartialView("_LastMinuteDeals")
+            return PartialView("_LastMinuteDeals");
         }
+        
+
+        /*    
         private Event LastMinuteDeals()
         {
-            return Event;
-        }
+            var event = db.Events.OrderBy(e => System.Guid.NewGuid()).Second();
 
+            return event;
+        }
         */
+        
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -48,5 +53,13 @@ namespace EventApplication.Controllers
 
             return View();
         }
+        /*
+        public ActionResult FindanEvent
+        {
+            var events = GetEvents(q)
+
+        }
+        */
     }
 }
+
