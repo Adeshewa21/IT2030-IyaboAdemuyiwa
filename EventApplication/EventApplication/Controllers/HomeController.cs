@@ -38,12 +38,13 @@ namespace EventApplication.Controllers
             };
         }
         
-        public ActionResult FindanEvent(string q)
+        public ActionResult FindanEvent(string q, string z)
         {
-            var events = GetFindanEvent(q);
+            var events = GetFindanEvent(q);       
             return PartialView(events);
         }
 
+        
         private List<Event> GetFindanEvent(string searchstring)
         {
             return db.Events
@@ -53,7 +54,28 @@ namespace EventApplication.Controllers
                 .Where(e => e.City.Contains(searchstring))
                 .Where(e => e.State.Contains(searchstring)).ToList();
         }
+
+        // Event or Event Type
+        /*
+        public ActionResult FindanEvent(string p)
+        {
+            var events = GetFindanEvent(p);
+            return PartialView(events);
+        }
+
         
+        private List<Event> GetFindanEvent(string searchstring)
+        {
+            return db.Events
+                //.Where(e => e.EventType.Type.Contains(searchstring))
+                //.Where(e => e.StartDate.Contains(searchstring))
+                .Where(e => e.Title.Contains(searchstring))
+                .Where(e => e.City.Contains(searchstring))
+                .Where(e => e.State.Contains(searchstring)).ToList();
+        }
+        */
+
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
