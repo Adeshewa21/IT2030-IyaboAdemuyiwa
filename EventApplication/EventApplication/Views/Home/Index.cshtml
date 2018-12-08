@@ -14,8 +14,6 @@
         <h2>Find an Event</h2>
 
         @using (
-            @*Ajax.BeginForm("FindanEvent", "Home", THIS "HOME" WAS USED BASED ON WHERE THE CODE for
-                FindanEvent was called using the e =>...*@
             Ajax.BeginForm("FindanEvent", "Home",
                 new AjaxOptions
                 {
@@ -33,9 +31,7 @@
             <input type="submit" value="search" />
         }
         <div id="searchresults">
-
         </div>
-
     </div>
 
     <div id="lastminutedeals">

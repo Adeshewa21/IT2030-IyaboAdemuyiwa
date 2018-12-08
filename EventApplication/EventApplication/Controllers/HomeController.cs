@@ -49,19 +49,9 @@ namespace EventApplication.Controllers
 
         private List<Event> GetFindanEvent(string searchstring)
         {
-            return db.Events
-
-                //.Where(e => e.EventType.Type.Contains(searchstring))
-                //.Where(e => e.StartDate.Contains(searchstring))
-                /*
-                 * AFTER ASKING PROFESSOR ON WHY ITS NOT WORKING RIGHT... THE TWO LINES BELOW ARE HER SUGGESTIONS*/
+            return db.Events 
                 .Where(e => e.Title.Contains(searchstring) ||
-                e.City.Contains(searchstring)).ToList();
-                /*
-                
-                .Where(e => e.Title.Contains(searchstring))
-                .Where(e => e.City.Contains(searchstring))
-                .Where(e => e.State.Contains(searchstring)).ToList();*/
+                e.City.Contains(searchstring)).ToList();               
         }
 
         // EventTitle Link
