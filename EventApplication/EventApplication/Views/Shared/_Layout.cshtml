@@ -27,7 +27,9 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
+
                 <ul id="navlist">
+                    @Scripts.Render("~/bundles/jquery")
                     <li class="first">
                         <a href="@Url.Action("Index", "Event")"
                            id="Event">Find an Events</a>
@@ -37,11 +39,16 @@
                            id="EventType">Organize an Event</a>
                     </li>
                     <li>
-                        <a href="/"
-                           id="Order">Ticket Ordered</a>
+                        <a href="/Order/Index"> Ticket Ordered</a>                       
                     </li>
                     <li>@Html.Partial("_LoginPartial")</li>
-                </ul>                
+                </ul> 
+                
+                <div id="nav">
+                    <a href="EventRegister/EventTitle"></a>
+                </div>
+
+
             </div>
         </div>
     </div>

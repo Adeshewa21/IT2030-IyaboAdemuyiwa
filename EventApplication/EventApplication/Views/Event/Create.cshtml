@@ -6,10 +6,10 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Event</h4>
         <hr />
@@ -111,5 +111,20 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @*
+        This is throwing an error but it needs to have Create a new EventType
+            Then when clicked it should redirect to Type in EventType
+            Then Create a new Event Type Type
+            @Html.ActionLink("Create a new Event Type", "Create", new { id = Model.EventTypeId }) |
+
+        OR THIS WAY
+        @foreach (var eventtype in Model)
+{
+    <li>
+        @Html.ActionLink(eventtype.Title, "Index", new { id = eventtype.EventId })
+    </li>
+}
+    *@
+
+    @Html.ActionLink("Back to Home", "Index")
 </div>

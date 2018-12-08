@@ -1,0 +1,19 @@
+﻿@model IEnumerable<EventApplication.Models.Event>
+@{
+    ViewBag.Title = "EventIndex";
+}
+
+<h2>Event Index</h2>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            @Html.ActionLink(item.Description, "EventDetails", new { id = item.EventId })
+        </li>
+    }
+</ul>
+
+@*
+    
+Might probably not be needed becuase it is not in the instruction*@
+

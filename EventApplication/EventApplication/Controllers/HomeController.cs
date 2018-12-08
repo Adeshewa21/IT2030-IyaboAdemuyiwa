@@ -20,6 +20,8 @@ namespace EventApplication.Controllers
             return View();
         }
         
+        // Last Minute Deals
+
         public ActionResult LastMinuteDeals()
         {
             try
@@ -37,7 +39,8 @@ namespace EventApplication.Controllers
                 return View();
             };
         }
-        
+        // Find an Event
+
         public ActionResult FindanEvent(string q, string z)
         {
             var events = GetFindanEvent(q);
@@ -47,6 +50,7 @@ namespace EventApplication.Controllers
         private List<Event> GetFindanEvent(string searchstring)
         {
             return db.Events
+
                 //.Where(e => e.EventType.Type.Contains(searchstring))
                 //.Where(e => e.StartDate.Contains(searchstring))
                 /*
@@ -59,6 +63,38 @@ namespace EventApplication.Controllers
                 .Where(e => e.State.Contains(searchstring)).ToList();
         }
         
+        // EventTitle Link
+        [HttpGet]
+        public ActionResult EventTitle()
+        {
+            var list = db.Events.ToList();
+            return View(list);
+        }
+
+        // EventIndex
+        [HttpGet]
+        public ActionResult EventIndex(int id)
+        {
+            var list = db.Events.ToList();
+            return View(list);
+        }
+
+        // Event Details
+        [HttpGet]
+        public ActionResult EventDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Event @event = db.Events.Find(id);
+            if (@event == null)
+            {
+                return HttpNotFound();
+            }
+            return View(@event);
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
