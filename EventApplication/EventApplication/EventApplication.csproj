@@ -235,6 +235,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\Apps\EventAppScript.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -299,7 +300,7 @@
     <Content Include="Views\EventType\Index.cshtml" />
     <Content Include="Views\FindanEvent.cshtml" />
     <Content Include="Views\Home\_LastMinuteDeals.cshtml" />
-    <Content Include="Views\Home\_FindanEvent.cshtml" />
+    <Content Include="Views\Home\FindanEvent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

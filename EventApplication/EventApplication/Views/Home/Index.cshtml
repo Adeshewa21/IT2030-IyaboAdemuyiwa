@@ -14,8 +14,9 @@
         <h2>Find an Event</h2>
 
         @using (
-
-            Ajax.BeginForm("FindanEvent", "Event",
+            @*Ajax.BeginForm("FindanEvent", "Home", THIS "HOME" WAS USED BASED ON WHERE THE CODE for
+            FindanEvent was called using the e =>...*@
+            Ajax.BeginForm("FindanEvent", "Home",
                 new AjaxOptions
                 {
                     InsertionMode = InsertionMode.Replace,
@@ -23,19 +24,20 @@
                     UpdateTargetId = "searchresults",
                     LoadingElementId = "ajax-loader",
                     OnFailure = "searchFailed",
-                    
                 }
             )
         )
         {
-            <input type="text" class="btn btn-default" placeholder="Event or EventType" name="EventType" />
-            <input type="text" class="btn btn-default" placeholder="Location, City or State" name="EventType" />
+            <input type="text" class="btn btn-default" placeholder="Event or EventType" name="q" />
+            <input type="text" class="btn btn-default" placeholder="Location, City or State" name="q" />
             <input type="submit" value="search" />
         }
         <div id="searchresults">
 
         </div>
 
+
+        
 
 
         @*
@@ -62,4 +64,5 @@
 @section Scripts
 {
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/Apps/EventAppScript.js"></script>
 }

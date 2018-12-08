@@ -1,11 +1,4 @@
-﻿/*using EventApplication.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-*/
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -45,21 +38,20 @@ namespace EventApplication.Controllers
             };
         }
         
-        public ActionResult FindanEvent(string EventType)
+        public ActionResult FindanEvent(string q)
         {
-            var events = GetFindanEvent(EventType);
+            var events = GetFindanEvent(q);
             return PartialView(events);
         }
 
         private List<Event> GetFindanEvent(string searchstring)
         {
             return db.Events
-                .Where(e => e.EventType.Type.Contains(searchstring))
+                //.Where(e => e.EventType.Type.Contains(searchstring))
+                //.Where(e => e.StartDate.Contains(searchstring))
                 .Where(e => e.Title.Contains(searchstring))
                 .Where(e => e.City.Contains(searchstring))
-                .Where( e => e.State.Contains(searchstring)).ToList();
-            
-            //return db.Events.Where(e => e.Contains(searchstring)).ToList();
+                .Where(e => e.State.Contains(searchstring)).ToList();
         }
         
         public ActionResult About()
@@ -75,13 +67,6 @@ namespace EventApplication.Controllers
 
             return View();
         }
-        /*
-        public ActionResult FindanEvent
-        {
-            var events = GetEvents(q)
-
-        }
-        */
     }
 }
 
