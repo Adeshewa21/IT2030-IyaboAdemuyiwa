@@ -1,3 +1,3 @@
 ﻿function serachFailed() {
-    $("#searchresults").html("Search failed. Please try again.");
+    $("#searchresults").html("No events found.");
 }

@@ -4,25 +4,22 @@
 
     <table class="table">
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+            
             @foreach (var item in Model)
             {
-                <th>
-                    @Html.DisplayNameFor(model => model.Title)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.StartDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.City)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.State)
-                </th>
-            }
-
-            @foreach (var item in Model)
-            {
-            <tr>
+                <tr>
                 <td>
                     @Html.ActionLink(item.Title, "Details", new { id = item.EventId })
                 </td>
@@ -38,8 +35,8 @@
 
             </tr>
         }
-        </table>
-    </div>
+    </table>
+    
 
 
 
