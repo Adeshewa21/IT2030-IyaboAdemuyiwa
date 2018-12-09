@@ -197,7 +197,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DateAttribute.cs" />
     <Compile Include="Controllers\EventController.cs" />
-    <Compile Include="Controllers\EventStoreController.cs" />
     <Compile Include="Controllers\EventTypeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -234,7 +233,6 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\EventContextDB.cs" />
-    <Compile Include="Models\EventStore.cs" />
     <Compile Include="Models\EventType.cs" />
     <Compile Include="Models\EventTypeContextDB.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -318,10 +316,8 @@
     <Content Include="Views\EventType\Index.cshtml" />
     <Content Include="Views\Home\_LastMinuteDeals.cshtml" />
     <Content Include="Views\Home\FindanEvent.cshtml" />
-    <Content Include="Views\EventStore\Browse.cshtml" />
-    <Content Include="Views\EventStore\Details.cshtml" />
-    <Content Include="Views\EventStore\EventSearch.cshtml" />
-    <Content Include="Views\EventStore\Index.cshtml" />
+    <Content Include="Views\Home\Browse.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

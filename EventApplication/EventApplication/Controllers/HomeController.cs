@@ -39,7 +39,7 @@ namespace EventApplication.Controllers
                 return View();
             };
         }
-        // Find an Event
+        //Find an Event
 
         public ActionResult FindanEvent(string q, string z)
         {
@@ -56,15 +56,7 @@ namespace EventApplication.Controllers
 
         // EventTitle Link
         [HttpGet]
-        public ActionResult EventTitle()
-        {
-            var list = db.Events.ToList();
-            return View(list);
-        }
-        /*
-        // EventIndex
-        [HttpGet]
-        public ActionResult EventIndex(int id)
+        public ActionResult Browse()
         {
             var list = db.Events.ToList();
             return View(list);
@@ -72,7 +64,7 @@ namespace EventApplication.Controllers
 
         // Event Details
         [HttpGet]
-        public ActionResult EventDetails(int? id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -85,7 +77,23 @@ namespace EventApplication.Controllers
             }
             return View(@event);
         }
-        */
+
+        // Find an Event
+
+        public ActionResult EventSearch(string q, string z)
+        {
+            var events = GetEventSearch(q);
+            return PartialView(events);
+        }
+
+        private List<Event> GetEventSearch(string searchstring)
+        {
+            return db.Events
+                .Where(e => e.Title.Contains(searchstring) ||
+                e.City.Contains(searchstring)).ToList();
+        }
+
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
