@@ -16,10 +16,10 @@ namespace EventApplication.Controllers
 
         public ActionResult Index()
         {
-         
+
             return View();
         }
-        
+
         // Last Minute Deals
 
         public ActionResult LastMinuteDeals()
@@ -49,9 +49,9 @@ namespace EventApplication.Controllers
 
         private List<Event> GetFindanEvent(string searchstring)
         {
-            return db.Events 
+            return db.Events
                 .Where(e => e.Title.Contains(searchstring) ||
-                e.City.Contains(searchstring)).ToList();               
+                e.City.Contains(searchstring)).ToList();
         }
 
         // EventTitle Link
@@ -61,7 +61,7 @@ namespace EventApplication.Controllers
             var list = db.Events.ToList();
             return View(list);
         }
-
+        /*
         // EventIndex
         [HttpGet]
         public ActionResult EventIndex(int id)
@@ -85,7 +85,7 @@ namespace EventApplication.Controllers
             }
             return View(@event);
         }
-
+        */
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

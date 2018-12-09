@@ -1,5 +1,4 @@
-﻿
-@model IEnumerable<EventApplication.Models.Event>
+﻿@model IEnumerable<EventApplication.Models.Event>
 
 <div id="searchresults">
 
@@ -17,13 +16,14 @@
             <th>
                 @Html.DisplayNameFor(model => model.State)
             </th>
-            
+
             @foreach (var item in Model)
             {
-                <tr>
+            <tr>
+
+
                 <td>
-                    @* This need to redirect to the Store Details*@
-                    @Html.ActionLink(item.Title, "Index", new { id = item.EventId })
+                    @Html.ActionLink(item.Title, "Details", new { id = item.EventId })
                 </td>
                 <td>
                     @item.StartDate
@@ -37,11 +37,10 @@
 
             </tr>
         }
-    </table>
-</div>
+        </table>
+    </div>
 
 
-    
 
 
 

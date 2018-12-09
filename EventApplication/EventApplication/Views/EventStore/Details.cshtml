@@ -1,0 +1,186 @@
+﻿@model EventApplication.Models.Event
+
+@{
+    ViewBag.Title = "Details";
+}
+
+@*<h2>Details</h2>*@
+
+<div>
+    <h4>Event</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EventType.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventType.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxTickets)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxTickets)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AvailableTickets)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AvailableTickets)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrganizerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrganizerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrganizerContactInfo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrganizerContactInfo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+
+    </dl>
+</div>
+
+<p class="button">
+    @Html.ActionLink("Register", "Register", "OrderCart", new { id = Model.EventId }, null)
+</p>
+
+<div>
+    @Html.ActionLink("Return Home", "Index", new { id = Model.EventId })
+</div>
+
+
+
+
+
+@*
+    @model EventApplication.Models.Event
+
+    @{
+        ViewBag.Title = "Details";
+    }
+
+    <h2>Details</h2>
+    <div>
+        <h2>
+            @Model.Title
+        </h2>
+        <div id="album-details">
+            <p>
+                Type &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; @Model.EventType.Type
+            <p>
+                Title &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;@Model.Title
+            </p>
+
+            <p>
+                Description &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;@Model.Description
+            </p>
+
+            <p>
+                Start Date &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; @Model.StartDate
+            </p>
+
+            <p>
+                End Date &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; @Model.EndDate
+            </p>
+
+            <p>
+                Max Tickets &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; @Model.MaxTickets
+            </p>
+
+            <p>
+                Available Tickets &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  @Model.AvailableTickets
+            </p>
+
+            <p>
+                Organizer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; @Model.OrganizerName
+            </p>
+
+            <p>
+                Organizer Contact Info &nbsp; &nbsp; &nbsp; @Model.OrganizerContactInfo
+            </p>
+
+            <p>
+                City &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;@Model.City
+            </p>
+
+            <p>
+                State &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; @Model.State
+            </p>
+
+        </div>
+    </div>
+
+
+        The output on chrome is not displaying right look on the instructions how it display compare to how it display on chrome.
+            It should also display "No event found" if no event can be found upon Search
+*
+
+<p class="button">
+    @Html.ActionLink("Register", "Register", "OrderCart", new { id = Model.EventId }, null)
+</p>
+
+<div>
+    @Html.ActionLink("Return Home", "Index", new { id = Model.EventId })
+</div>
+*@

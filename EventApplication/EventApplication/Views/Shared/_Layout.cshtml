@@ -18,16 +18,13 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("Event Unlimited", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
-
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
-
                 <ul id="navlist">
                     @Scripts.Render("~/bundles/jquery")
                     <li class="first">
@@ -39,21 +36,19 @@
                            id="EventType">Organize an Event</a>
                     </li>
                     <li>
-                        <a href="/Order/Index"> Ticket Ordered</a>                       
+                        <a href="/EventStore/Browse"></a>
+                    </li>
+                    <li>
+                        <a href="/Order/Index"> Ticket Ordered</a>
                     </li>
                     <li>@Html.Partial("_LoginPartial")</li>
-                </ul> 
-                
+                </ul>
                 <div id="nav">
                     <a href="EventRegister/EventTitle"></a>
                 </div>
-
-
             </div>
         </div>
     </div>
-
-
     @* Register Start Here*@
     <div id="header">
         @Scripts.Render("~/bundles/jquery")
@@ -62,13 +57,12 @@
                 <a href="/"
                    id="current">Home</a>
             </li>
-
+            @* Register not needed because *@
             <li>
                 <a href="EventRegister/Register">Register</a>
             </li>
         </ul>
     </div>
-
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -76,7 +70,6 @@
             <p>&copy; @DateTime.Now.Year</p>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

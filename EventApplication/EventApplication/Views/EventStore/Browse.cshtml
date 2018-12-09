@@ -1,0 +1,19 @@
+﻿@model IEnumerable<EventApplication.Models.Event>
+@{
+    ViewBag.Title = "Browse";
+}
+
+<h2>Browse by Title</h2>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            @*
+                Each time i click on each Title i want it to redirect me to the event index and not the home index
+            *@
+            @Html.ActionLink(item.Title, "Details", new { id = item.EventId })
+        </li>
+
+    }
+</ul>
+

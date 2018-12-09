@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EventApplication.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,8 @@ namespace EventApplication.Controllers
     {
         public string OrderCartId;
         private const string OrderSessionKey = "OrderId";
+
+        EventContextDB db = new EventContextDB();
 
         // The HttpContext object is unique to every session 
         // As long as browser is not close to start a new session user will have access to their order and or cart
@@ -34,6 +37,23 @@ namespace EventApplication.Controllers
                 orderId = context.Session[OrderSessionKey].ToString();
             }
             return orderId;
+        }
+
+        public List<Order> GetOrderItems()
+        {
+            return db.Orders.Where(order => order.OrderId == OrderCartId).ToList();
+        }
+
+        public decimal GetOrderTotal()
+        {
+            /*
+            On the video illustration we have this below
+            decimal? total = (from cartItems in db.Carts)
+                where cartItems.CartId == ShoppingCartId
+                select cartItems.AlbumSelected.Price * (int?) cart.Items.Count.Sum();
+            return total ?? decimal.Zero
+            */
+            return decimal.Zero;    //This will always return zero unless I write code
         }
     }
 }
