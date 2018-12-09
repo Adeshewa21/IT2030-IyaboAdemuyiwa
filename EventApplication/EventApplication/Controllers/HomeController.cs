@@ -43,15 +43,16 @@ namespace EventApplication.Controllers
 
         public ActionResult FindanEvent(string q, string z)
         {
-            var events = GetFindanEvent(q);
+            var events = GetFindanEvent(q, z);
             return PartialView(events);
         }
 
-        private List<Event> GetFindanEvent(string searchstring)
+        private List<Event> GetFindanEvent(string q, string z)
         {
             return db.Events
-                .Where(e => e.Title.Contains(searchstring) ||
-                e.City.Contains(searchstring)).ToList();
+                .Where(e => e.Title.Contains(q) ||
+                e.City.Contains(z)).ToList();
+            //Use the q and z and name it different alphabet to complete the State and Location
         }
 
         // EventTitle Link

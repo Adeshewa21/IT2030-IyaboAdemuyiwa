@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -9,6 +10,7 @@ namespace EventApplication.Models.ViewModels // View model was added because iw 
     {
         // It is going to be used/called by the Index.cshtml i.e Index View
         public List<Order> OrderItems;
-        public decimal FREE;
+        [Display(Name="Number of Tickets")]
+        public string NumberOfOrders;
     }
 }

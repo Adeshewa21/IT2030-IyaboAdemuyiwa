@@ -229,6 +229,10 @@
     <Compile Include="Migrations\201812090839123_EventContextDB1.Designer.cs">
       <DependentUpon>201812090839123_EventContextDB1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812091816576_latestModelUpdates.cs" />
+    <Compile Include="Migrations\201812091816576_latestModelUpdates.Designer.cs">
+      <DependentUpon>201812091816576_latestModelUpdates.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Event.cs" />
@@ -318,10 +322,13 @@
     <Content Include="Views\Home\FindanEvent.cshtml" />
     <Content Include="Views\Home\Browse.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Order\Register.cshtml" />
+    <Content Include="Views\Order\Details.cshtml" />
+    <Content Include="Views\Order\OrderSummary.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Order\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -354,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812090839123_EventContextDB1.resx">
       <DependentUpon>201812090839123_EventContextDB1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812091816576_latestModelUpdates.resx">
+      <DependentUpon>201812091816576_latestModelUpdates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

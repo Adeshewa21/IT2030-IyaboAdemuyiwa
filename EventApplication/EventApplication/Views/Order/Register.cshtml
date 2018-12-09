@@ -1,0 +1,64 @@
+﻿@model EventApplication.Models.Event
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+
+<br />
+<form method="post" action="Register">
+    @Html.AntiForgeryToken()
+    <div>
+
+        <p>Sales ends on @Model.StartDate</p>
+
+        <input type="hidden" name="EventId" value="@Model.EventId" />
+
+        <table>
+            <tr>
+                @*Headings*@
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>Number of Tickets</th>
+                <th></th>
+
+            </tr>
+
+            <tr>
+                <td>@Model.Title</td>
+                <td>@Model.AvailableTickets</td>
+            </tr>
+
+            <tr>
+                <td>FREE</td>
+                <td>
+                    <select name="NumberOfTickets">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>1</option>
+                        <option>1</option>
+                        <option>1</option>
+                        <option>1</option>
+                        <option>1</option>
+                        <option>1</option>
+                        <option>1</option>
+                    </select>
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+    <p class="button">
+        @*@Html.ActionLink("Checkout", "Checkout", "OrderSummary"*@
+        <button type="submit" title="Checkout">Checkout</button>
+    </p>
+</form>
+
+

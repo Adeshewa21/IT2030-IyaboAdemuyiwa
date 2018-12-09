@@ -1,37 +1,45 @@
 ﻿@model IEnumerable<EventApplication.Models.Event>
 
 <div id="searchresults">
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StartDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.City)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.State)
-            </th>
-            @foreach (var item in Model)
-            {
+    @if (Model == null || Model.Count() == 0)
+    {
+        <p>No events found</p>
+    }
+    else
+    {
+        <table class="table">
             <tr>
-                <td>
-                    @* This need to redirect to the Store Details*@
-                    @Html.ActionLink(item.Title, "Details", new { id = item.EventId })
-                </td>
-                <td>
-                    @item.StartDate
-                </td>
-                <td>
-                    @item.City
-                </td>
-                <td>
-                    @item.State
-                </td>
-            </tr>
-        }
-        </table>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StartDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.City)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.State)
+                </th>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @* This need to redirect to the Store Details*@
+                        @Html.ActionLink(item.Title, "Details", new { id = item.EventId })
+                    </td>
+                    <td>
+                        @item.StartDate
+                    </td>
+                    <td>
+                        @item.City
+                    </td>
+                    <td>
+                        @item.State
+                    </td>
+                </tr>
+            }
+            </table>
+    }
+    
     </div>

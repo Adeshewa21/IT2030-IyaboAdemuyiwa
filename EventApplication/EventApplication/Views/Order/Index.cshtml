@@ -1,0 +1,35 @@
+﻿@model EventApplication.Models.ViewModels.OrderCartViewModel
+@{
+    ViewBag.Title = "View";
+}
+
+@section Scripts
+{
+    <script src="~/Scripts/Apps/EventAppScript.js"></script>
+}
+
+<h2> Here's your Order Summary</h2>
+<br />
+<div>
+    <table>
+        <tr>
+            @*Headings*@
+            <th>Title</th>
+            <th>Date Ordered</th>
+            <th>Number of Tickets</th>
+            <th>Order Status</th>
+        </tr>
+        @foreach (var item in Model.OrderItems)
+        {
+        <tr id="record-@item.RecordId">
+            <td>@item.EventSelected.Title</td>
+            <td>@item.Count</td>
+            <td>@item.NumberofTickets</td>
+        </tr>
+        }
+    </table>
+</div>
+<p class="button">
+    @Html.ActionLink("Go to my Tickets", "Ticket")
+</p>
+
