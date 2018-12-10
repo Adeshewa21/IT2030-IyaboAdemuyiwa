@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace EventApplication.Models
 {
-    public class Event
+    public class Event : IValidatableObject
     {
         public virtual int EventId { get; set; }
 
@@ -18,11 +17,11 @@ namespace EventApplication.Models
 
         [Display(Name = "Title")]
         [Required]
-        [StringLength(50)]
+        [StringLength(50, ErrorMessage = "Title should not exceed 50 characters")]
         public virtual string Title { get; set; }
 
         [Display(Name = "Event Description")]
-        [StringLength(150)]
+        [StringLength(150, ErrorMessage = "Description should not exceed 150 characters")]
         public virtual string Description { get; set; }
 
         [Display(Name = "Start Date")]
@@ -35,12 +34,12 @@ namespace EventApplication.Models
         [Required]
         public virtual DateTime EndDate { get; set; }
 
-        [MinLength(1, ErrorMessage = "Maximum Tickets cannot be 0")]
+        //[MinLength(1, ErrorMessage = "Maximum Tickets cannot be 0")]
         [Display(Name = "Max Tickets")]
         [Required]
         public virtual string MaxTickets { get; set; }
 
-        [MinLength(1, ErrorMessage = "Available Tickets cannot be 0")]
+        //[MinLength(1, ErrorMessage = "Available Tickets cannot be 0")]
         [Display(Name = "Available Tickets")]
         [Required]
         public virtual string AvailableTickets { get; set; }
@@ -60,25 +59,30 @@ namespace EventApplication.Models
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validation)
         {
-            if ((StartDate == EndDate))
-            {
-                // error
-                yield return (new ValidationResult("End Date cannot be the less than Event Start Date", new[] { "EndDate" }));
-            }
+            int maxMaxTickets = 1;
+            int maxAvailableTickets = 1;
 
-            //Max Tickets cannot be 0
-            if (MaxTickets.Length != 0)
+            //validation 1 - Credits has to be 1-4
+            if (int.Parse(MaxTickets) < maxMaxTickets)
             {
-                // error
+                //error 
                 yield return (new ValidationResult("Max Tickets cannot be 0", new[] { "MaxTickets" }));
             }
 
-            // Available Tickets cannot be 0
-            if (AvailableTickets.Length != 0)
+            if (int.Parse(AvailableTickets) < maxAvailableTickets)
             {
-                // error
+                //error 
                 yield return (new ValidationResult("Available Tickets cannot be 0", new[] { "AvailableTickets" }));
             }
+
+
+
+
+            if ((EndDate <= StartDate))
+            {
+                // error
+                yield return (new ValidationResult("End Date cannot be the less than Event Start Date", new[] { "EndDate" }));
+            }             
         }
     }
 }

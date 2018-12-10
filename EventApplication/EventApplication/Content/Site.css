@@ -1,4 +1,5 @@
-﻿* {
+﻿
+* {
     margin: 0px;
     padding: 0px;
     border: none;
@@ -33,7 +34,7 @@ body {
     #header h1 {
         font-size: 18px;
         float: left;
-        background: url.(/content/Images/logo.png) no-repeat;
+        background: no-repeat;
         padding: 45px 0px 5px 0px;
     }
 
@@ -42,7 +43,7 @@ body {
 #promotion {
     height: 300px;
     width: 700px;
-    background: url.(/content/Images/home-showcase.png) no-repeat;
+    background: no-repeat;
 }
 
 
@@ -103,7 +104,6 @@ ul {
 #cart {
     float: right;
 }
-
 
 
 #update-message {
@@ -348,9 +348,7 @@ input[type=text], input[type=password], select {
 }
 
 
-
 /* Tables */
-
 table {
     border: 1px solid #000;
     border-collapse: collapse;

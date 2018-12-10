@@ -2,8 +2,10 @@
 @{
     ViewBag.Title = "Last Minute Deals";
 }
+<h4>Last Minute Deals</h4>
 <table class="table">
     <tr>
+        
         <th>
             @Html.DisplayNameFor(model => model.Title)
         </th>
@@ -22,6 +24,7 @@
         @foreach (var item in Model)
         {
             <tr>
+           
             <td>
                 @Html.ActionLink(item.Title, "Details", new { id = item.EventId })
             </td>

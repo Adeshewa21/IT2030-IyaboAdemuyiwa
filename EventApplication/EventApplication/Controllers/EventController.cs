@@ -42,7 +42,7 @@ namespace EventApplication.Controllers
             }
             return View(@event);
         }
-
+        [Authorize]
         // GET: Event/Create
         public ActionResult Create()
         {

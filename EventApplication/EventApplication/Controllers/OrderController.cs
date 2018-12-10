@@ -28,7 +28,7 @@ namespace EventApplication.Controllers
 
         //GET: /Order/AddOrder/5
 
-
+        
         [HttpGet]
         public ActionResult Register(int? id)
         {
@@ -44,7 +44,7 @@ namespace EventApplication.Controllers
             return View(@event);
 
         }
-
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Register(int? eventId, string numberOfTickets)
@@ -60,15 +60,14 @@ namespace EventApplication.Controllers
                 
                 //orderCart.OrderItems.Add(newOrder);
 
-                db.Orders.Add(newOrder);
+                db.Orders.Add(@newOrder);
                 db.SaveChanges();
             }
-
-            
-
-            //ViewBag.OrderId = new SelectList("NumberofTickets", @orderCartViewModel.OrderItems);
-            //return View(@orderCartViewModel);
-            //db.SaveChanges();
+            //else
+            //{
+                //newOrder.Count++;
+            //}
+            //db.SaveChanges();            
             //db.SaveChanges();
             return RedirectToAction("OrderSummary");
         }
