@@ -13,7 +13,6 @@ namespace EventApplication.Controllers
     public class OrderController : Controller
     {
         EventContextDB db = new EventContextDB();
-
         // GET: Order
         public ActionResult Index()
         {
@@ -27,8 +26,6 @@ namespace EventApplication.Controllers
         }
 
         //GET: /Order/AddOrder/5
-
-        
         [HttpGet]
         public ActionResult Register(int? id)
         {
@@ -42,7 +39,6 @@ namespace EventApplication.Controllers
                 return HttpNotFound();
             }
             return View(@event);
-
         }
         [Authorize]
         [HttpPost]
@@ -54,10 +50,8 @@ namespace EventApplication.Controllers
                 Order newOrder = new Order();
                 newOrder.EventId = eventId.Value;  // Passed into this method
                 newOrder.NumberofTickets = numberOfTickets;  // Passed into this method
-
                 //OrderCartViewModel orderCart = new OrderCartViewModel();
                 //orderCart.OrderItems = new List<Order>();
-                
                 //orderCart.OrderItems.Add(newOrder);
 
                 db.Orders.Add(@newOrder);
@@ -65,16 +59,12 @@ namespace EventApplication.Controllers
             }
             //else
             //{
-                //newOrder.Count++;
+            //newOrder.Count++;
             //}
             //db.SaveChanges();            
             //db.SaveChanges();
             return RedirectToAction("OrderSummary");
         }
-
-
-
-
 
         [HttpPost] // To avoid people making deletion to codes
         //Post: Ajax call
@@ -82,15 +72,13 @@ namespace EventApplication.Controllers
         {
             return View();
         }
-
         /*
-        //Post: /Order/Register/5
+        //Post: /Order/Register/5    
         public ActionResult Register()
         {
             Order orderItem = dbContext.Orders.SingleOrDefault(o => o.OrderId == OrderId && o.EventId == id);
             if (orderItem == null)
             {
-
             }
             return View();
         }

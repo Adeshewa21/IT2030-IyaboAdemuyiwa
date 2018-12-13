@@ -15,10 +15,11 @@ namespace EventApplication.Models
         public int Count { get; set; }
 
         /* Navigation property always has to be virtual because entity framework is set set for mvc by default it does lazy loadings
-         whic means it will not load this Event Object into Memory until Someone Ask For It*/
+         whic means it will not load this Event Object into Memory until Someone Ask For It**/
         public virtual Event EventSelected { get; set; } // It is going to link Order into Event
 
         public DateTime StartDate { get; set; }
         public virtual string NumberofTickets { get; set; }
     }
 }
+
